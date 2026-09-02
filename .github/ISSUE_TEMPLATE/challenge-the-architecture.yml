@@ -1,0 +1,32 @@
+name: Challenge or improve the architecture
+description: Disagree with a control, a tier rule, the evidence schema, or a crosswalk? Tell us where the architecture is wrong or incomplete.
+title: "[Feedback] <area>"
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Challenge is welcome. Use what works, and tell us where it does not.
+  - type: dropdown
+    id: area
+    attributes:
+      label: What part of the architecture?
+      options:
+        - A control or control pillar
+        - Risk tiering / triage rules
+        - The evidence schema
+        - A framework crosswalk
+        - The MCP interface or reference implementation
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where is it wrong or incomplete?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you change?

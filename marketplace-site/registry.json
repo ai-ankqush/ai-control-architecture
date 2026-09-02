@@ -1,0 +1,215 @@
+{
+  "entries": [
+    {
+      "name": "aca.example/hello-collector",
+      "version": "0.1.0",
+      "type": "collector",
+      "track": "open",
+      "cert": "ACA-Compatible",
+      "license": "Apache-2.0",
+      "pricing": "free",
+      "publisher": "aca.reference",
+      "integrity": {
+        "algorithm": "sha256",
+        "hash": "e5445aea1ed80f6f96da50c8083feddea59101b6e2579f0b4164711ead3284bf"
+      },
+      "signature": "wsSIp+YZAYI64TXU+yKdlM64tXx8nx9Ej3OU8IowWH6wPpxIxVWtwwV54ct+n+3C0bwb8tk7UKlrMCSXiNesDg==",
+      "files": {
+        "aca-plugin.json": "6304f6145311ce0d697e3ce20eff0cff78c6248038b8b5fa2dbd1334756f8f65",
+        "index.mjs": "a18b694356b7024a47c0d7b5c1c77c0af03bef507910cc501e65da18e4b7ff0d"
+      },
+      "source": "/tmp/seedreg/example-collector",
+      "manifest": {
+        "name": "aca.example/hello-collector",
+        "type": "collector",
+        "version": "0.1.0",
+        "acaVersion": ">=0.1 <1.0",
+        "description": "Reference collector that emits a sample evidence object.",
+        "author": "ACA",
+        "license": "Apache-2.0",
+        "pricing": "free",
+        "entry": "./index.mjs",
+        "permissions": {
+          "network": [],
+          "reads": [
+            "example"
+          ],
+          "writes": [],
+          "dataScopes": [
+            "internal"
+          ]
+        },
+        "controls": [
+          "ACA-08-03"
+        ]
+      },
+      "publishedAt": "2026-08-31T07:21:45.931Z"
+    },
+    {
+      "name": "aca.example/nist-crosswalk",
+      "version": "0.1.0",
+      "type": "framework",
+      "track": "open",
+      "cert": "ACA-Compatible",
+      "license": "CC-BY-4.0",
+      "pricing": "free",
+      "publisher": "aca.reference",
+      "integrity": {
+        "algorithm": "sha256",
+        "hash": "b4830a3db0d9fe718190a069718dfba0deee4faf4f7d69de75b75703eaaeed38"
+      },
+      "signature": "7zsnx3f2wni3wX0SxJjXaSCJqlwls88aXmJL6mdkrsDvqXkQYiSutSKsvmj9IZfeT2UVKFha4JJjab+VlkHRAg==",
+      "files": {
+        "aca-plugin.json": "c85506b70871d8ef2768aa043daf83fa0d6208e8ff2768af4d3fd8d4c39dfedc",
+        "index.mjs": "24639ddae342bfc2bb99f096b6aff4dc3ba64d984c424a8b62084b16452e38a4"
+      },
+      "source": "/tmp/seedreg/example-framework",
+      "manifest": {
+        "name": "aca.example/nist-crosswalk",
+        "type": "framework",
+        "version": "0.1.0",
+        "acaVersion": ">=0.1 <1.0",
+        "description": "Reference crosswalk mapping some ACA controls to external frameworks.",
+        "author": "ACA",
+        "license": "CC-BY-4.0",
+        "pricing": "free",
+        "entry": "./index.mjs"
+      },
+      "publishedAt": "2026-08-31T07:21:45.961Z"
+    },
+    {
+      "name": "healthcare.example/hipaa-pack",
+      "version": "0.1.0",
+      "type": "control-pack",
+      "track": "open",
+      "cert": "ACA-Compatible",
+      "license": "CC-BY-4.0",
+      "pricing": "free",
+      "publisher": "aca.reference",
+      "integrity": {
+        "algorithm": "sha256",
+        "hash": "bb2d1ede77d007440716f68cdd047062ea37e8a2b077d23bbecb07aea94753c6"
+      },
+      "signature": "YlteRt3ZtG6LBGpyR7NEpTGYd0fwJN/Fh6ccA6G4Xwst6FHHjYvVpQpad+BEVMvBEnrTBLQGSd0gZd8WWFc3CQ==",
+      "files": {
+        "aca-plugin.json": "fb4be4107109eadf7b5c51e463aa9a147376acf9f158cd277a8ad79d4279ab39",
+        "index.mjs": "89a7534edd7b12979cf7773977d1c56727c34f8eb566a8418c1ae188fbd662ec"
+      },
+      "source": "/tmp/seedreg/example-control-pack",
+      "manifest": {
+        "name": "healthcare.example/hipaa-pack",
+        "type": "control-pack",
+        "version": "0.1.0",
+        "acaVersion": ">=0.1 <1.0",
+        "description": "Reference control pack adding a namespaced healthcare control.",
+        "author": "ACA",
+        "license": "CC-BY-4.0",
+        "pricing": "free",
+        "entry": "./index.mjs",
+        "controls": [
+          "healthcare.example/HIPAA-164-312"
+        ]
+      },
+      "publishedAt": "2026-08-31T07:21:45.988Z"
+    },
+    {
+      "name": "aca.example/injection-test",
+      "version": "0.1.0",
+      "type": "test",
+      "track": "open",
+      "cert": "ACA-Compatible",
+      "license": "Apache-2.0",
+      "pricing": "free",
+      "publisher": "aca.reference",
+      "integrity": {
+        "algorithm": "sha256",
+        "hash": "2193fbe71e97677b2ebecf3ef6e8c0560b5b2740428c9c39e3191c5047a40220"
+      },
+      "signature": "LyUebAYzIVvG8tUL4j7UdUEPKJ6ZF0OCnPQkM287osLyX1v2/qKSsYjuqVuycIMt3D8WqRLnzzhqv9cgjU8sBg==",
+      "files": {
+        "aca-plugin.json": "8e12d6679c224dc92eee58539397478229166f1ea9e4f721c3d5f3999434813c",
+        "index.mjs": "83c85d2c3c9fb1e0902bac99cd7af7a5830251d4a46a33621495bae9ad8be3ae"
+      },
+      "source": "/tmp/seedreg/example-test",
+      "manifest": {
+        "name": "aca.example/injection-test",
+        "type": "test",
+        "version": "0.1.0",
+        "acaVersion": ">=0.1 <1.0",
+        "description": "Reference test pack: a prompt-injection assurance check emitting test-result evidence.",
+        "author": "ACA",
+        "license": "Apache-2.0",
+        "pricing": "free",
+        "entry": "./index.mjs",
+        "controls": [
+          "ACA-10-01"
+        ]
+      },
+      "publishedAt": "2026-08-31T07:21:46.017Z"
+    },
+    {
+      "name": "aca.example/markdown-report",
+      "version": "0.1.0",
+      "type": "renderer",
+      "track": "open",
+      "cert": "ACA-Compatible",
+      "license": "Apache-2.0",
+      "pricing": "free",
+      "publisher": "aca.reference",
+      "integrity": {
+        "algorithm": "sha256",
+        "hash": "89281a658e42883a061248c34e4cde73be04d2f5f76206c21e4ae8bf8f07dc06"
+      },
+      "signature": "AZqvmz5csatym6JK3gJ7UbGWP32xcSBfdHGrn2drzIRW2bRmFBdLjEDLtOo2WTLyVJe4b18Lc7zYc5suS2wwDA==",
+      "files": {
+        "aca-plugin.json": "cc4cf39b290638f29d614124e6cc4952ad3930c70d72357846cff431fb053e3a",
+        "index.mjs": "f272fdc6510b21a3cfe40b81b2c3c3362754982880bdc42e9d1a8f6e5f837751"
+      },
+      "source": "/tmp/seedreg/example-renderer",
+      "manifest": {
+        "name": "aca.example/markdown-report",
+        "type": "renderer",
+        "version": "0.1.0",
+        "acaVersion": ">=0.1 <1.0",
+        "description": "Reference renderer: turns an assessment into a Markdown report.",
+        "author": "ACA",
+        "license": "Apache-2.0",
+        "pricing": "free",
+        "entry": "./index.mjs"
+      },
+      "publishedAt": "2026-08-31T07:21:46.046Z"
+    },
+    {
+      "name": "aca.example/shadow-enforcer",
+      "version": "0.1.0",
+      "type": "enforcer",
+      "track": "open",
+      "cert": "ACA-Compatible",
+      "license": "Apache-2.0",
+      "pricing": "free",
+      "publisher": "aca.reference",
+      "integrity": {
+        "algorithm": "sha256",
+        "hash": "2f418fae16a33b3d4d59a105370912f8ebbcc75b380432887a2f7b584c9cbf76"
+      },
+      "signature": "nHKlMIrD9hhNvN4S/0/Gk4XnBlnoS+D8a3Ra9zcMNsa41Dg/RlkD2g08h5Jkd6jVxIchoSHU/UnNv5GtlG6ICQ==",
+      "files": {
+        "aca-plugin.json": "f3c5040decad1159a245b9031681f6bd88f07039662293e6b6000f2d410a15c1",
+        "index.mjs": "7730e7a81054d690ba1995c4031bf7b0470fa8d0110776e6c8e06365c922353f"
+      },
+      "source": "/tmp/seedreg/example-enforcer",
+      "manifest": {
+        "name": "aca.example/shadow-enforcer",
+        "type": "enforcer",
+        "version": "0.1.0",
+        "acaVersion": ">=0.1 <1.0",
+        "description": "Reference enforcer in shadow mode (observe only). The production-grade enforcer (PAL / Action Fabric) is closed and plugs into this same interface as a paid, metered capability.",
+        "author": "ACA",
+        "license": "Apache-2.0",
+        "pricing": "free",
+        "entry": "./index.mjs"
+      },
+      "publishedAt": "2026-08-31T07:21:46.076Z"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+#!/usr/bin/env node
+/**
+ * build-content.mjs
+ *
+ * Organizes the repo's canonical markdown into `site/content/`, laid out to
+ * mirror the GitBook nav (order, labels, URLs). `docs/` stays the source of
+ * truth; `content/` is generated + gitignored.
+ *
+ * Retype ordering: LARGER `order` = HIGHER in the sidebar.
+ */
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "..", "..");
+const CONTENT = path.resolve(__dirname, "..", "content");
+
+// Section folders (rendered as index.yml folder-config, no landing page — like GitBook group headers)
+const SECTIONS = {
+  "foundation": { order: 7000, label: "Foundation", icon: "book" },
+  "the-ten-pillars": { order: 6000, label: "The Ten Pillars", icon: "shield-check" },
+  "operating-the-architecture": { order: 5000, label: "Operating the Architecture", icon: "gear" },
+  "reference": { order: 4000, label: "Reference", icon: "bookmark" },
+  "standards-crosswalks": { order: 3000, label: "Standards Crosswalks", icon: "git-compare" },
+  "machine-readable-catalogue": { order: 2500, label: "Machine-Readable", icon: "database" },
+  "templates-and-examples": { order: 2000, label: "Templates & Examples", icon: "copy" },
+  "project": { order: 1000, label: "Project", icon: "law" },
+};
+
+// Explicit order + label for the crosswalks (fixed sequence, not alpha)
+const CROSSWALKS = {
+  "mappings-readme": [1000, "Crosswalks Overview"],
+  "nist-ai-rmf-crosswalk": [900, "NIST AI RMF"],
+  "iso-42001-crosswalk": [800, "ISO/IEC 42001"],
+  "eu-ai-act-crosswalk": [700, "EU AI Act"],
+  "sr-11-7-crosswalk": [600, "SR 11-7"],
+  "nydfs-part-500-crosswalk": [500, "NYDFS Part 500"],
+  "owasp-llm-crosswalk": [400, "OWASP LLM"],
+  "owasp-agentic-ai-crosswalk": [300, "OWASP Agentic"],
+  "us-state-ai-laws-crosswalk": [200, "US State AI Laws"],
+};
+
+// ---- helpers ----
+const read = (p) => fs.readFile(p, "utf8");
+async function write(rel, body) {
+  const dest = path.join(CONTENT, rel);
+  await fs.mkdir(path.dirname(dest), { recursive: true });
+  await fs.writeFile(dest, body);
+}
+const firstH1 = (md) => { const m = md.match(/^\s*#\s+(.+?)\s*$/m); return m ? m[1].trim() : null; };
+const cleanTitle = (t) => (t || "").replace(/^Pillar\s+\d+\s*[:·-]\s*/i, "").trim();
+const hasFrontmatter = (md) => /^\s*---\r?\n/.test(md);
+async function listMd(dir) {
+  try { return (await fs.readdir(dir)).filter((f) => f.toLowerCase().endsWith(".md")); } catch { return []; }
+}
+
+const plan = [];        // { srcAbs, destRel, url, label, order, layout }
+const indexByBase = {}; // basename -> url (for link rewriting)
+function add(srcAbs, destRel, url, label, order, layout, icon) {
+  plan.push({ srcAbs, destRel, url, label, order, layout, icon });
+  indexByBase[path.basename(srcAbs).toLowerCase()] = url;
+}
+
+async function buildPlan() {
+  // docs/NN-*.md + home + author
+  for (const f of await listMd(path.join(ROOT, "docs"))) {
+    const abs = path.join(ROOT, "docs", f);
+    const base = f.replace(/\.md$/i, "");
+    if (/^docs-readme$/i.test(base)) { add(abs, "index.md", "/", "AI Control Architecture", 10000, undefined, "home"); continue; }
+    if (/^author$/i.test(base)) { add(abs, "about-the-author.md", "/about-the-author", "About the Author", 7500, undefined, "person"); continue; }
+    const num = parseInt((base.match(/^(\d+)/) || [])[1] || "", 10);
+    let section;
+    if (num >= 1 && num <= 6) section = "foundation";
+    else if (num >= 7 && num <= 16) section = "the-ten-pillars";
+    else if (num >= 17 && num <= 25) section = "operating-the-architecture";
+    else if (num === 26) section = "reference";
+    else section = "operating-the-architecture";
+    const slug = base.toLowerCase();
+    const title = cleanTitle(firstH1(await read(abs))) || slug;
+    const label = Number.isFinite(num) ? `${String(num).padStart(2, "0")} · ${title}` : title;
+    add(abs, `${section}/${slug}.md`, `/${section}/${slug}`, label, Number.isFinite(num) ? 1000 - num : 500);
+  }
+
+  // top-level + project single pages
+  const singles = [
+    ["WHY_THIS_EXISTS.md", "why-this-exists.md", "/why-this-exists", "Why This Exists", 9000, "question"],
+    ["QUICKSTART.md", "quickstart.md", "/quickstart", "Quickstart", 8000, "rocket"],
+    ["CONTRIBUTING.md", "project/contributing.md", "/project/contributing", "Contributing", 300, "git-pull-request"],
+    ["TRADEMARK.md", "project/trademark.md", "/project/trademark", "Trademark & Conformance", 200, "verified"],
+    ["LICENSE.md", "project/license.md", "/project/license", "License", 100, "law"],
+    ["controls/CONTROLS-README.md", "machine-readable-catalogue/controls-readme.md", "/machine-readable-catalogue/controls-readme", "Catalogue (YAML/JSON)", 100, "database"],
+    // TEMP: evidence-schema page pulled to isolate a Retype build failure. Schema files remain in /schemas. Re-add once cause is confirmed.
+    // ["schemas/README.md", "machine-readable-catalogue/evidence-schema.md", "/machine-readable-catalogue/evidence-schema", "Evidence Schema", 90],
+  ];
+  for (const [src, dest, url, label, order, icon] of singles) {
+    const abs = path.join(ROOT, src);
+    try { await fs.access(abs); add(abs, dest, url, label, order, undefined, icon); } catch {}
+  }
+
+  // standards crosswalks (fixed order + labels)
+  for (const f of await listMd(path.join(ROOT, "mappings"))) {
+    const abs = path.join(ROOT, "mappings", f);
+    const slug = f.replace(/\.md$/i, "").toLowerCase();
+    const [order, label] = CROSSWALKS[slug] || [150, cleanTitle(firstH1(await read(abs))) || slug];
+    add(abs, `standards-crosswalks/${slug}.md`, `/standards-crosswalks/${slug}`, label, order);
+  }
+
+  // templates + examples: ONLY the two overview READMEs appear in nav;
+  // the individual files are built but hidden from the sidebar (layout: page).
+  for (const [dir, readmeLabel, readmeOrder] of [["templates", "Templates", 900], ["examples", "Examples", 800]]) {
+    for (const f of await listMd(path.join(ROOT, dir))) {
+      const abs = path.join(ROOT, dir, f);
+      const slug = f.replace(/\.md$/i, "").toLowerCase();
+      if (/readme/i.test(slug)) {
+        add(abs, `templates-and-examples/${slug}.md`, `/templates-and-examples/${slug}`, readmeLabel, readmeOrder);
+      } else {
+        const title = cleanTitle(firstH1(await read(abs))) || slug;
+        add(abs, `templates-and-examples/${slug}.md`, `/templates-and-examples/${slug}`, title, undefined, "page");
+      }
+    }
+  }
+}
+
+const GITHUB_BLOB = "https://github.com/ai-ankqush/ai-control-architecture/blob/main";
+function rewriteLinks(md, srcAbs) {
+  return md.replace(/\]\(([^)]+)\)/g, (whole, target) => {
+    if (/^(https?:|mailto:|#|\/)/i.test(target)) return whole;
+    const [rawPath, anchor] = target.split("#");
+    const hash = anchor ? "#" + anchor : "";
+    const base = path.basename(rawPath.trim()).toLowerCase();
+    if (indexByBase[base]) return `](${indexByBase[base]}${hash})`;
+    // Unresolved relative link: if it points at a real repo file (scripts, data,
+    // etc. that aren't part of the site), send it to GitHub so it still resolves.
+    const abs = path.resolve(path.dirname(srcAbs), rawPath.trim());
+    const rel = path.relative(ROOT, abs);
+    if (rel && !rel.startsWith("..")) return `](${GITHUB_BLOB}/${rel}${hash})`;
+    return whole;
+  });
+}
+
+async function emit() {
+  try { await fs.rm(CONTENT, { recursive: true, force: true }); }
+  catch (e) { console.warn(`content clean skipped (${e.code || e.message}); overwriting in place`); }
+  await fs.mkdir(CONTENT, { recursive: true });
+
+  for (const item of plan) {
+    let md = rewriteLinks(await read(item.srcAbs), item.srcAbs);
+    if (!hasFrontmatter(md)) {
+      let fm = `---\nlabel: ${JSON.stringify(item.label)}\n`;
+      if (item.order !== undefined) fm += `order: ${item.order}\n`;
+      if (item.icon) fm += `icon: ${item.icon}\n`;
+      if (item.layout) fm += `layout: ${item.layout}\n`;
+      fm += `---\n\n`;
+      md = fm + md;
+    }
+    await write(item.destRel, md);
+  }
+
+  // folder config (index.yml) sets each section's order + label WITHOUT a landing page
+  for (const [slug, meta] of Object.entries(SECTIONS)) {
+    await write(`${slug}/index.yml`, `label: ${JSON.stringify(meta.label)}\norder: ${meta.order}\n` + (meta.icon ? `icon: ${meta.icon}\n` : ""));
+  }
+
+  console.log(`Wrote ${plan.length} pages + ${Object.keys(SECTIONS).length} section folder-configs`);
+}
+
+await buildPlan();
+await emit();

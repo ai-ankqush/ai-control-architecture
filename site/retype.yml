@@ -1,0 +1,56 @@
+input: content
+output: .retype
+
+# The domain the Retype Pro key is registered to. www resolves to the same.
+url: aicontrolarchitecture.org
+
+# Remove the "Powered by Retype" footer (permitted once the Pro key is in the build)
+poweredByRetype: false
+
+start:
+  # Lets you preview Pro-only features before the key is in your wallet.
+  # The real key (added via `retype wallet`) also removes the "Powered by Retype" footer.
+  pro: true
+
+branding:
+  title: AI Control Architecture
+  label: v0.1.0
+
+# Theme matched to Neo Control's dark console sidebar (from src/components/console/sidebar.tsx)
+theme:
+  base:
+    base-color: "#3b82f6"              # Neo Control accent = blue (its console accent)
+  dark:
+    base-bg: "#0b0c10"                 # page background            (Neo --bg)
+    base-text: "#e2e8f0"               # body text                 (Neo --text)
+    base-border: "#1e2028"             # dividers                  (Neo --border)
+    heading-text: "#ffffff"            # headings
+    base-link: "#3b82f6"               # in-body links = Neo blue
+    base-item-text-active: "#e2e8f0"   # menu hover/active text stays WHITE (not the blue accent)
+    # left navigation — exact match to Neo Control's Row component
+    sidebar-left-bg: "#0a0b0e"         # sidebar (Neo --bg-elevated, darker than page)
+    sidebar-left-border: "#1e2028"     # right edge of the sidebar
+    nav-item-text: "#8892a4"           # idle items                (Neo --muted)
+    nav-item-text-hover: "#e2e8f0"     # hover brightens to --text
+    nav-item-bg-hover: "#1e2028"       # hover row bg              (Neo --border)
+    nav-item-bg-active: "#1e2028"      # active row bg             (Neo --border)
+    nav-item-text-active: "#e2e8f0"    # active text stays white (accent is the border)
+    nav-item-border-active: "#3b82f6"  # active LEFT border = Neo blue (the marker)
+    nav-item-text-active-weight: 600   # active item slightly bolder
+
+meta:
+  siteName: AI Control Architecture
+  title: " · AI Control Architecture"   # appended to each page's <title>
+
+# Dark by default (Pro). Works in local preview because start.pro is set above.
+scheme:
+  mode: dark
+
+favicon: static/favicon.png
+
+blog:
+  title: Blog
+  layout: page
+
+footer:
+  copyright: "AI Control Architecture · [CC BY 4.0](/project/license) · Stewarded by [Neo Control](https://neocontrol.ai) · {{ year }}"

@@ -1,0 +1,41 @@
+name: Become a Steward
+description: Help shape and govern AI Control Architecture v0.1 before it sets. For auditors, AI-security or monitoring vendors, systems integrators, and enterprises running real AI.
+title: "[Steward] <your organisation>"
+labels: ["steward"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for wanting to help steward the AI Control Architecture. This issue is public.
+        If you would rather keep the conversation private, email the founding steward at **neo@neocontrol.ai** instead.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Which best describes you?
+      options:
+        - Auditor / assurance firm
+        - AI-security or monitoring vendor
+        - Systems integrator
+        - Enterprise running real AI
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: shape
+    attributes:
+      label: What would you want to test or shape?
+      description: For example, does the evidence schema carry what you need? Will you emit or consume ACA evidence? Will you build connectors? Does this reduce your control or audit burden?
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: How should we reach you?
+      description: Email or other. Leave blank if you prefer to be contacted through GitHub.
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: Before you submit
+      options:
+        - label: I understand this is an early, versioned release (v0.1.0) meant to be challenged and improved.
+          required: true

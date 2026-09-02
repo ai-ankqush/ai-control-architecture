@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/resources", "destination": "/explore/resources", "permanent": true },
+    { "source": "/training", "destination": "/explore/training", "permanent": true },
+    { "source": "/get-involved", "destination": "/explore/get-involved", "permanent": true },
+    { "source": "/ecosystem-rfc", "destination": "/explore/ecosystem-rfc", "permanent": true },
+    { "source": "/marketplace", "destination": "/explore/marketplace", "permanent": true },
+    { "source": "/why-this-exists", "destination": "/architecture/why-this-exists", "permanent": true },
+    { "source": "/quickstart", "destination": "/architecture/quickstart", "permanent": true },
+    { "source": "/about-the-author", "destination": "/architecture/about-the-author", "permanent": true },
+    { "source": "/contributing", "destination": "/architecture/project/contributing", "permanent": true },
+    { "source": "/license", "destination": "/architecture/project/license", "permanent": true },
+    { "source": "/trademark", "destination": "/architecture/project/trademark", "permanent": true },
+    { "source": "/foundation/:path*", "destination": "/architecture/foundation/:path*", "permanent": true },
+    { "source": "/the-ten-pillars/:path*", "destination": "/architecture/the-ten-pillars/:path*", "permanent": true },
+    { "source": "/operating-the-architecture/:path*", "destination": "/architecture/operating-the-architecture/:path*", "permanent": true },
+    { "source": "/reference/:path*", "destination": "/architecture/reference/:path*", "permanent": true },
+    { "source": "/standards-crosswalks/:path*", "destination": "/architecture/standards-crosswalks/:path*", "permanent": true },
+    { "source": "/machine-readable-catalogue/:path*", "destination": "/architecture/machine-readable-catalogue/:path*", "permanent": true },
+    { "source": "/templates-and-examples/:path*", "destination": "/architecture/templates-and-examples/:path*", "permanent": true },
+    { "source": "/project/:path*", "destination": "/architecture/project/:path*", "permanent": true }
+  ]
+}

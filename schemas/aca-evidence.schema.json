@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aicontrolarchitecture.org/schemas/aca-evidence.schema.json",
+  "title": "ACA Evidence Object",
+  "description": "The portable representation of proof for an AI control. A connector, test tool, monitoring product or auditor can exchange these without a translation layer. Part of the ACA Specification.",
+  "type": "object",
+  "required": [
+    "schemaVersion", "acaVersion", "id", "controlId", "subject",
+    "evidenceType", "boundaryState", "verificationState", "confidence",
+    "collector", "source", "collectedAt", "freshness", "integrity"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "acaVersion": { "type": "string" },
+    "id": { "type": "string", "minLength": 1 },
+    "controlId": {
+      "type": "string",
+      "pattern": "^(ACA-\\d{2}-\\d{2}|[a-z0-9.-]+/.+)$",
+      "description": "A core ACA control (ACA-NN-NN) or a namespaced control."
+    },
+    "subject": {
+      "type": "object",
+      "required": ["system", "tenant", "dataClassification"],
+      "properties": {
+        "system": { "type": "string" },
+        "useCaseId": { "type": "string" },
+        "tenant": { "type": "string" },
+        "dataClassification": { "enum": ["public", "internal", "confidential", "restricted"] }
+      }
+    },
+    "evidenceType": { "enum": ["configuration", "test-result", "attestation", "log", "scan", "document", "observation"] },
+    "boundaryState": { "enum": ["declared", "evidenced", "verified", "enforced"] },
+    "verificationState": { "enum": ["met", "partial", "not-met", "unknown", "error"] },
+    "confidence": { "enum": ["high", "medium", "low"] },
+    "limitations": { "type": "string" },
+    "collector": {
+      "type": "object",
+      "required": ["id", "name", "version", "type"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "type": { "enum": ["connector", "human", "product", "auditor"] }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["provider"],
+      "properties": {
+        "provider": { "type": "string" },
+        "endpoint": { "type": "string" },
+        "query": { "type": "string" },
+        "account": { "type": "string" }
+      }
+    },
+    "collectedAt": { "type": "string", "format": "date-time" },
+    "freshness": {
+      "type": "object",
+      "oneOf": [
+        { "required": ["validUntil"] },
+        { "required": ["ttlSeconds"] }
+      ],
+      "properties": {
+        "validUntil": { "type": "string", "format": "date-time" },
+        "ttlSeconds": { "type": "number" }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "actor": { "type": "string" },
+          "action": { "type": "string" },
+          "at": { "type": "string", "format": "date-time" },
+          "hash": { "type": "string" }
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "required": ["algorithm", "hash"],
+      "properties": {
+        "algorithm": { "type": "string" },
+        "hash": { "type": "string" },
+        "signature": { "type": "string" },
+        "signer": { "type": "string" }
+      }
+    },
+    "payload": { "type": "object" },
+    "payloadRef": { "type": "string" },
+    "redacted": { "type": "boolean" },
+    "crosswalks": { "type": "array", "items": { "type": "string" } },
+    "labels": { "type": "object" }
+  }
+}

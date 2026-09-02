@@ -1,0 +1,12 @@
+{
+  "schema": "aca-conformance-profiles/0.1",
+  "title": "ACA Conformance Profiles",
+  "description": "Minimum evidence expectations per risk tier, so 'enough proof' is objective. The required boundary-source strength graduates with the tier (the ACA boundary ladder: Declared -> Evidenced -> Verified -> Enforced).",
+  "profiles": {
+    "T1": { "minBoundaryState": "declared", "note": "Bounded, low-risk. Controls may be declared." },
+    "T2": { "minBoundaryState": "evidenced", "note": "Enterprise data. Controls should be evidenced." },
+    "T3": { "minBoundaryState": "evidenced", "note": "Influences decisions. Controls should be evidenced." },
+    "T4": { "minBoundaryState": "verified", "note": "Action-capable. Key controls should be verified by test." },
+    "T5": { "minBoundaryState": "enforced", "note": "High-impact / autonomous / regulated. Boundaries should be enforced at runtime." }
+  }
+}

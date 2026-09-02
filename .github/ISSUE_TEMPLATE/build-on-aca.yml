@@ -1,0 +1,36 @@
+name: Build on ACA (extension proposal)
+description: Propose a connector, control pack, crosswalk, test pack, or renderer you want to build or would like to see.
+title: "[Extension] <slot>: <name>"
+labels: ["extension"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ACA is a small core plus six extension slots. See the reference implementation at
+        [aca-core](https://github.com/ai-ankqush/aca-core) and the reference add-ons at
+        [aca-plugins](https://github.com/ai-ankqush/aca-plugins).
+  - type: dropdown
+    id: slot
+    attributes:
+      label: Which extension slot?
+      options:
+        - collector (connector - reads a system, emits evidence)
+        - control-pack (adds namespaced controls / a domain pack)
+        - framework (crosswalk to an external standard)
+        - test (assurance or adversarial test)
+        - renderer (report / export)
+        - enforcer (runtime decision point)
+        - not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What does it do?
+      description: What system does it read or act on, which controls or frameworks does it touch, and what evidence does it emit?
+    validations:
+      required: true
+  - type: input
+    id: org
+    attributes:
+      label: You / your organisation (optional)

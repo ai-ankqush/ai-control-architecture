@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Become a Steward (private)
+    url: mailto:neo@neocontrol.ai
+    about: Prefer to keep it private? Email the founding steward directly and we will follow up.
+  - name: Questions & open discussion
+    url: https://github.com/ai-ankqush/ai-control-architecture/discussions
+    about: Open-ended questions, ideas, and conversation about the architecture.

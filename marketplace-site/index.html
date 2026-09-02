@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketplace - AI Control Architecture</title>
+<meta name="description" content="The neutral marketplace for AI Control Architecture add-ons. Anyone can publish; every add-on is signed and integrity-checked. No vendor owns the shelf.">
+<meta property="og:title" content="AI Control Architecture Marketplace">
+<meta property="og:description" content="A neutral index of AI control add-ons. Connectors, control packs, crosswalks, tests, renderers, enforcers. Signed, verifiable, vendor-neutral.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#0b0c10; --panel:#0f1320; --panel2:#12172a; --line:#232a39; --line2:#2f3646;
+    --text:#e2e8f0; --muted:#8892a4; --muted2:#c7d2e6; --blue:#2b6bff; --blue2:#8ab4ff; --green:#2fb484;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);padding:18px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{font-weight:700;font-size:15px;color:var(--text);letter-spacing:.2px}
+  .brand span{color:var(--muted);font-weight:500}
+  nav a{font-size:14px;color:var(--muted);margin-left:20px}
+  nav a:hover{color:var(--text);text-decoration:none}
+  .hero{padding:64px 0 40px}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--blue);text-transform:uppercase}
+  h1{font-size:42px;line-height:1.1;margin:14px 0 18px;font-weight:800}
+  .lede{font-size:18px;color:var(--muted2);max-width:760px}
+  h2{font-size:26px;margin:52px 0 8px;font-weight:700}
+  h2 + p.sub{color:var(--muted);margin-top:0;max-width:760px}
+  .grid{display:grid;gap:16px;margin:24px 0}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .card{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--panel)}
+  .card .slot{color:var(--blue);font-weight:700;font-size:15px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:6px}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+  td b{color:var(--text)}
+  .pill{display:inline-block;font-size:11px;font-weight:700;border-radius:20px;padding:3px 10px;border:1px solid var(--line2);color:var(--muted)}
+  .pill.blue{color:var(--blue2);border-color:var(--blue)}
+  .pill.green{color:var(--green);border-color:var(--green)}
+  ul.clean{list-style:none;padding:0;margin:18px 0}
+  ul.clean li{position:relative;padding-left:24px;margin:9px 0;color:var(--text)}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--blue)}
+  pre{background:#0a0d18;border:1px solid var(--line);border-radius:10px;padding:16px 18px;overflow:auto;font-size:13px;color:#c9d4ea}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .btns{margin:24px 0}
+  .btn{display:inline-block;padding:11px 20px;border-radius:9px;font-size:14px;font-weight:600;margin:0 10px 10px 0}
+  .btn.primary{background:var(--blue);color:#fff}
+  .btn.primary:hover{text-decoration:none;opacity:.92}
+  .btn.ghost{border:1px solid var(--blue);color:var(--blue2)}
+  .btn.ghost:hover{text-decoration:none}
+  .note{border-left:3px solid var(--line2);padding:6px 0 6px 16px;color:var(--muted);font-size:14px;margin:22px 0}
+  .seed{border:1px solid var(--line);border-radius:10px;padding:13px 16px;background:var(--panel);font-size:14px;color:var(--muted2)}
+  .seed b{color:var(--text)}
+  footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;color:var(--muted);font-size:13px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
+  .fbtn{font-size:13px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:5px 14px;cursor:pointer;background:transparent}
+  .fbtn:hover{color:var(--text)}
+  .fbtn.on{color:#fff;background:var(--blue);border-color:var(--blue)}
+  .listing .lhead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .listing .name{font-weight:700;font-size:14px;color:var(--text);word-break:break-word}
+  .listing .ldesc{color:var(--muted);font-size:13px;margin:8px 0 12px;line-height:1.5}
+  .listing .lmeta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:11px}
+  .listing .pub{font-size:12px;color:var(--muted)}
+  .listing .lperms{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+  .listing .lfoot{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-top:9px}
+  .listing .sig{color:var(--green)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">AI Control Architecture <span>· Marketplace</span></div>
+  <nav>
+    <a href="https://www.aicontrolarchitecture.org/">Architecture</a>
+    <a href="https://www.aicontrolarchitecture.org/explore/get-involved">Get involved</a>
+    <a href="https://github.com/ai-ankqush/aca-registry">Registry</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Neutral by design</div>
+    <h1>The marketplace for AI control add-ons.</h1>
+    <p class="lede">A neutral index of add-ons that plug into the same core. It belongs to the ecosystem, not to any one vendor. Anyone can publish, every add-on is signed and integrity-checked, and each enterprise decides how much to trust. Neo Control lists its own products here on exactly the same rails as everyone else.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/ai-ankqush/aca-registry">Publish an add-on</a>
+      <a class="btn ghost" href="https://github.com/ai-ankqush/aca-plugins">Browse the reference add-ons</a>
+    </div>
+  </section>
+
+  <h2>What you can build</h2>
+  <p class="sub">A small core plus six extension slots. An add-on reads and writes only ACA objects.</p>
+  <div class="grid g3">
+    <div class="card"><div class="slot">collector</div><div class="d">Reads a system, emits ACA evidence. Connectors live here.</div></div>
+    <div class="card"><div class="slot">framework</div><div class="d">Crosswalks controls to an external standard or regulation.</div></div>
+    <div class="card"><div class="slot">control-pack</div><div class="d">Adds namespaced controls or a domain pack. Core ACA-* stays immutable.</div></div>
+    <div class="card"><div class="slot">test</div><div class="d">An assurance or adversarial check, emits test-result evidence.</div></div>
+    <div class="card"><div class="slot">renderer</div><div class="d">Turns an assessment into a report or export.</div></div>
+    <div class="card"><div class="slot">enforcer</div><div class="d">Acts at runtime on a decision. Paid enforcement plugs into this public interface.</div></div>
+  </div>
+
+  <h2>Two tracks</h2>
+  <table>
+    <tr><th></th><th>Open track</th><th>Curated track</th></tr>
+    <tr><td><b>Who publishes</b></td><td>Anyone, permissionless</td><td>Reviewed submissions only</td></tr>
+    <tr><td><b>Certification</b></td><td><span class="pill">ACA-Compatible</span></td><td><span class="pill blue">ACA-Verified</span> <span class="pill green">ACA-Certified</span></td></tr>
+    <tr><td><b>Vetting</b></td><td>Automated</td><td>Automated, security, behavioural (plus assurance for Certified)</td></tr>
+    <tr><td><b>Runtime</b></td><td>Always sandboxed, permission-prompted</td><td>Sandboxed; may be pre-trusted per enterprise policy</td></tr>
+    <tr><td><b>Paid add-ons</b></td><td>Not the place for them</td><td>Yes, this is where commercial add-ons live</td></tr>
+    <tr><td><b>Best for</b></td><td>The long tail, velocity, experimentation</td><td>Enterprise-safe adoption and monetisation</td></tr>
+  </table>
+  <p class="sub">An enterprise can set a policy of curated-only. An individual builder can live entirely in the open track.</p>
+
+  <h2>Every listing is verifiable</h2>
+  <p class="sub">Transparency is the point. The decision an enterprise makes is "can I trust this," and each listing answers it up front.</p>
+  <ul class="clean">
+    <li>Certification badge and support tier</li>
+    <li>Publisher identity, verified for paid and curated add-ons</li>
+    <li>Declared permissions (network, reads, writes, data scopes), shown before install</li>
+    <li>Licence, version, and security-update status</li>
+  </ul>
+  <p class="sub">Under the hood, every package carries a deterministic content hash and is signed with Ed25519. Consumers verify the signature and re-check integrity on install, so a package changed since publish is rejected. A compromised add-on can be revoked centrally, and installed instances are disabled on the next check. The same registry serves a self-hosted core and a hosted one.</p>
+
+  <h2>Live catalogue</h2>
+  <p class="sub">Signed, verifiable add-ons in the registry. These are the open reference add-ons today; third-party and curated listings appear here as the registry fills.</p>
+  <div id="filters" class="filters"></div>
+  <div id="listings" class="grid g2"></div>
+  <p class="sub" style="margin-top:16px">The curated track, reviewed and enterprise-safe and where paid add-ons live, opens as the first commercial add-ons are certified.</p>
+
+  <h2>Publish your add-on</h2>
+  <p class="sub">Scaffold from the reference core, then publish through the signed registry.</p>
+<pre><code>npx @aca/core new collector yourorg/your-connector
+
+aca-registry keygen --out mykey
+aca-registry publish ./your-connector --track open --key mykey.key.pem --publisher yourorg</code></pre>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/ai-ankqush/aca-registry">The registry (aca-registry)</a>
+    <a class="btn ghost" href="https://www.aicontrolarchitecture.org/explore/get-involved">List your add-on / become a Steward</a>
+  </div>
+
+  <h2>Certification</h2>
+  <p class="sub">Certification tells an enterprise what an add-on is and how far it has been checked. These are ACA marks, kept separate from any single vendor's product claims.</p>
+  <div class="grid g3">
+    <div class="card"><div class="slot">ACA-Compatible</div><div class="d">Automated checks pass: valid manifest, schemas, and interfaces. Awarded on publish to the open track. Buyer-beware, always sandboxed.</div></div>
+    <div class="card"><div class="slot" style="color:var(--blue2)">ACA-Verified</div><div class="d">Compatible, plus a security and behavioural review by the curated board. For the curated track, where trusted and paid add-ons begin.</div></div>
+    <div class="card"><div class="slot" style="color:var(--green)">ACA-Certified</div><div class="d">Verified, plus demonstrated conformance to an ACA profile through an approved assurance process. The highest bar.</div></div>
+  </div>
+  <p class="sub">How it works: publishing to the open track earns Compatible immediately. Verified and Certified are granted by the curated review board against published, versioned criteria, with an appeals path. A compromised or non-conforming add-on can be revoked and its mark withdrawn. Support tiers (Community, Verified, Certified, Neo-supported) sit alongside the certification mark.</p>
+
+  <h2>Neutral by design</h2>
+  <p class="sub">The marketplace is deployment-neutral: the same registry serves a self-hosted core and a hosted one, and no vendor owns the shelf. Neo Control is the founding steward and the first participant. Its own products, such as AI Supply Chain, Vendor Risk, Shadow AI, and the Action Fabric, list here as curated add-ons on the same rails as anyone else's, and compete on how well they work, not on owning the marketplace.</p>
+  <div class="note">This is v0.1 and evolving. The curated review board is Neo-stewarded today and moves to external assessors as ACA matures, with published, versioned criteria and an appeals path. See the <a href="https://www.aicontrolarchitecture.org/explore/ecosystem-rfc">ecosystem RFC</a> for the full extension contracts and governance.</div>
+
+</div>
+
+<footer><div class="wrap">
+  AI Control Architecture Marketplace · open, vendor-neutral, CC BY 4.0 · stewarded by <a href="https://neocontrol.ai">Neo Control</a> ·
+  <a href="https://www.aicontrolarchitecture.org/">aicontrolarchitecture.org</a>
+</div></footer>
+
+<script>
+(function(){
+  var slots=['all','collector','framework','control-pack','test','renderer','enforcer'];
+  var all=[], active='all';
+  var listEl=document.getElementById('listings'), filEl=document.getElementById('filters');
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function perms(p){p=p||{};function j(a){return (a&&a.length)?a.map(esc).join(', '):'none';}return 'reads: '+j(p.reads)+' &middot; writes: '+j(p.writes)+' &middot; network: '+j(p.network);}
+  function card(e){
+    var m=e.manifest||{};
+    var certCls=e.cert==='ACA-Compatible'?'':'blue';
+    var priceCls=e.pricing==='paid'?'blue':'green';
+    return '<div class="card listing">'+
+      '<div class="lhead"><span class="name">'+esc(e.name)+'</span><span class="pill">'+esc(e.type)+'</span></div>'+
+      '<div class="ldesc">'+esc(m.description||'')+'</div>'+
+      '<div class="lmeta"><span class="pill '+certCls+'">'+esc(e.cert)+'</span>'+
+        '<span class="pill">'+esc(e.track)+'</span>'+
+        '<span class="pill '+priceCls+'">'+esc(e.pricing)+'</span>'+
+        '<span class="pub">by '+esc(e.publisher)+'</span></div>'+
+      '<div class="lperms">'+perms(m.permissions)+'</div>'+
+      '<div class="lfoot"><span>'+esc(e.license||'')+'</span><span>v'+esc(e.version)+'</span><span class="sig">signed &#10003;</span></div>'+
+    '</div>';
+  }
+  function render(){
+    var items=all.filter(function(e){return active==='all'||e.type===active;});
+    listEl.innerHTML = items.length ? items.map(card).join('')
+      : '<div class="seed">No add-ons in this slot yet. <a href="https://github.com/ai-ankqush/aca-registry">Publish one.</a></div>';
+  }
+  function filters(){
+    filEl.innerHTML = slots.map(function(s){return '<button class="fbtn'+(s===active?' on':'')+'" data-s="'+s+'">'+(s==='all'?'All':s)+'</button>';}).join('');
+    Array.prototype.forEach.call(filEl.querySelectorAll('.fbtn'),function(b){b.onclick=function(){active=b.getAttribute('data-s');filters();render();};});
+  }
+  fetch('registry.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    all=(d&&d.entries)||[]; filters(); render();
+  }).catch(function(){
+    filEl.innerHTML=''; listEl.innerHTML='<div class="seed">Live catalogue is warming up. Browse the <a href="https://github.com/ai-ankqush/aca-plugins">reference add-ons</a> meanwhile.</div>';
+  });
+})();
+</script>
+</body>
+</html>
