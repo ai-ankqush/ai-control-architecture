@@ -21,6 +21,12 @@ This post is about the answer we shipped: a **working, cloneable reference imple
 real Claude plus MCP deployment under control, end to end, using the AI Control Architecture. Not a
 framework slide. Running code, with the tests to prove it.
 
+And the point that matters most: **this control point is yours.** The gateway is not a vendor-operated
+intermediary you route your traffic and secrets through — it runs inside your environment, on your
+infrastructure, with your Anthropic key, under your policy. It is open source, so you can read every
+line, change it, and operate it yourself. You do not solve one control problem by handing a new,
+critical layer to a third party.
+
 ## Where control belongs
 
 ACA asks three questions of any AI system, and a governed deployment answers all three at a single
