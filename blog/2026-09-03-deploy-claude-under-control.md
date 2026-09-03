@@ -98,15 +98,17 @@ and the EU AI Act (human oversight, record-keeping).
 
 ## Deploy it for your whole organisation
 
-The demo governs one agent. The same code ships as a **drop-in, Anthropic-compatible governing
-proxy** so you can put an entire organisation's Claude usage under control — and you do **not** need
-the full ACA platform to do it. Bring your own Anthropic key.
+The demo governs one agent. The same code ships as a **drop-in, vendor-neutral governing proxy** —
+one proxy that governs **Claude, ChatGPT, Gemini, and Copilot** — so you can put an entire
+organisation's model usage under control, and you do **not** need the full ACA platform to do it.
+Bring your own provider key.
 
-Your apps and people point their Claude client at the gateway instead of `api.anthropic.com`. The
-gateway holds the Anthropic key — employees never see it; they authenticate to the gateway with a
-token you control and can rotate — forwards every call to Claude, governs the model's requested tool
-actions through the same SEE / DECIDE / DO checks before any client can execute them, and logs every
-decision. One click, enter your key, done: deploy to Render (it prompts for the key), run the
+Your apps and people point their model client at the gateway instead of the provider's API. The
+gateway holds the provider key — employees never see it; they authenticate to the gateway with a
+token you control and can rotate — forwards every call to the provider, governs the model's requested
+tool actions through the same SEE / DECIDE / DO checks before any client can execute them, and logs
+every decision. It is the same gateway whichever model you run: set `ANTHROPIC_API_KEY`,
+`OPENAI_API_KEY`, `GITHUB_TOKEN`, or `GEMINI_API_KEY` (or several at once). One click, enter your key, done: deploy to Render (it prompts for the key), run the
 container (`docker compose up`), or import it on Vercel. A fresh deploy proves itself in the browser
 at `/demo`.
 
@@ -124,8 +126,8 @@ Per-team policy and durable, shared evidence for a fleet are covered in the depl
 4. Swap the demo MCP servers for your real MCP transport. The gateway sits at the same call boundary.
 5. Wire the approval gate and the kill switch to your operations surface.
 
-- **Code:** [github.com/ai-ankqush/deploy-claude-under-control-with-aca](https://github.com/ai-ankqush/deploy-claude-under-control-with-aca)
-- **Deploy + scale guide:** [`docs/DEPLOY.md`](https://github.com/ai-ankqush/deploy-claude-under-control-with-aca/blob/main/docs/DEPLOY.md)
+- **Code:** [github.com/ai-ankqush/aca-mcp-gateway](https://github.com/ai-ankqush/aca-mcp-gateway)
+- **Deploy + scale guide:** [`docs/DEPLOY.md`](https://github.com/ai-ankqush/aca-mcp-gateway/blob/main/docs/DEPLOY.md)
 - **Marketplace:** the per-model listings (Claude, ChatGPT, Gemini, Copilot) at [marketplace.aicontrolarchitecture.org](https://marketplace.aicontrolarchitecture.org)
 - **Get involved:** [become a Steward](/explore/get-involved) and help shape the control patterns for safe agent adoption.
 
