@@ -24,6 +24,23 @@ const CONTENT = path.resolve(__dirname, "..", "content");
 
 const ARCH = "architecture"; // documentation root
 const EXP = "explore";       // general/navigational group
+
+// Custom <head> include (Retype merges content/_includes/head.html into every page's head).
+// Widen the LEFT nav so long section labels (e.g. "Recursive Cyber Defense Model") fit, and let
+// any long nav label wrap instead of truncating. Scoped to desktop; targets only .sidebar (left),
+// never .sidebar-right (the on-page TOC).
+const HEAD_HTML = `<style>
+@media (min-width: 768px) {
+  .sidebar:not(.sidebar-right) { width: 21rem !important; }
+  .sidebar:not(.sidebar-right) a,
+  .sidebar:not(.sidebar-right) .truncate {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+}
+</style>
+`;
 const MARKETPLACE_URL = "https://marketplace.aicontrolarchitecture.org";
 
 // Top-level groups (folder-config, no landing page).
@@ -219,6 +236,9 @@ async function emit() {
   for (const [slug, meta] of Object.entries(SECTIONS)) {
     await write(`${ARCH}/${slug}/index.yml`, `label: ${JSON.stringify(meta.label)}\norder: ${meta.order}\n` + (meta.icon ? `icon: ${meta.icon}\n` : ""));
   }
+
+  // Custom head include: widen the left nav so long section labels fit.
+  await write("_includes/head.html", HEAD_HTML);
 
   // Old-path redirects are handled at the Vercel edge (site/vercel.json), NOT as
   // Retype pages — Retype lists redirect stubs in the sidebar, which duplicates nav.
