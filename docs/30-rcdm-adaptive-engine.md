@@ -8,7 +8,7 @@ The forward-looking functions, Anticipate and Disrupt, may be realised by an ada
 
 Within the architecture, the adaptive engine's role is defined at the standard level: under the authority of Govern, it provides behavioural anticipation and graduated interdiction, advancing through the runtime maturity ladder from Shadow Mode upward. The standard specifies what the engine must do and the boundaries it must respect. It does not specify how the engine works inside.
 
-A conformant implementation may realise this role with a rule set, a learned model, a hybrid, or any other mechanism, provided it operates within the [governance overlay](29-rcdf-governance-overlay.md) and containment: bounded by policy-as-code, constrained by validation gates, supervised on the loop, recorded in a tamper-evident audit, and reaching the world only through the [Action Fabric](31-action-fabric-where-halves-meet.md). The architecture governs the engine; it does not require any particular one, and it could govern more than one.
+A conformant implementation may realise this role with a rule set, a learned model, a hybrid, or any other mechanism, provided it operates within the [governance overlay](29-rcdm-governance-overlay.md) and containment: bounded by policy-as-code, constrained by validation gates, supervised on the loop, recorded in a tamper-evident audit, and reaching the world only through the [Action Fabric](31-action-fabric-where-halves-meet.md). The architecture governs the engine; it does not require any particular one, and it could govern more than one.
 
 ---
 

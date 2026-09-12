@@ -1,6 +1,6 @@
 # The Five Functions
 
-RCDF expresses runtime defense as five functions arranged in a continuous, recursive loop. They are not phases performed once but capacities maintained always; the output of each cycle refines the next.
+RCDM expresses runtime defense as five functions arranged in a continuous, recursive loop. They are not phases performed once but capacities maintained always; the output of each cycle refines the next.
 
 The loop is: **Govern to Observe to Anticipate to Disrupt to Adapt, and back to Govern.**
 
@@ -16,7 +16,7 @@ In the architecture, Govern is where the design-time control decisions become ru
 
 ## Observe, continuous behavioural awareness
 
-Observe maintains real-time, behavioural awareness of the protected environment: what is happening, by which actors, in what sequence. RCDF emphasises behaviour over signatures. Defense reasons about *what an action does*, not merely whether it matches a known pattern, so that it remains effective against techniques never seen before. Observe is the runtime extension of the [Monitoring, Logging & Evidence](15-pillar-monitoring-and-evidence.md) pillar: the same evidence, read continuously and in time to act.
+Observe maintains real-time, behavioural awareness of the protected environment: what is happening, by which actors, in what sequence. RCDM emphasises behaviour over signatures. Defense reasons about *what an action does*, not merely whether it matches a known pattern, so that it remains effective against techniques never seen before. Observe is the runtime extension of the [Monitoring, Logging & Evidence](15-pillar-monitoring-and-evidence.md) pillar: the same evidence, read continuously and in time to act.
 
 ---
 

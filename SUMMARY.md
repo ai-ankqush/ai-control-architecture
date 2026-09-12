@@ -27,12 +27,12 @@
 * [15 · Monitoring, Logging & Evidence](docs/15-pillar-monitoring-and-evidence.md)
 * [16 · Incident Containment & Recovery](docs/16-pillar-containment-and-recovery.md)
 
-## Runtime Defense (RCDF)
+## Runtime Defense (RCDM)
 
-* [27 · Runtime Defense Overview](docs/27-rcdf-runtime-defense-overview.md)
-* [28 · The Five Functions](docs/28-rcdf-five-functions.md)
-* [29 · Governance Overlay](docs/29-rcdf-governance-overlay.md)
-* [30 · The Adaptive Engine](docs/30-rcdf-adaptive-engine.md)
+* [27 · Runtime Defense Overview](docs/27-rcdm-runtime-defense-overview.md)
+* [28 · The Five Functions](docs/28-rcdm-five-functions.md)
+* [29 · Governance Overlay](docs/29-rcdm-governance-overlay.md)
+* [30 · The Adaptive Engine](docs/30-rcdm-adaptive-engine.md)
 * [31 · Where the Halves Meet: the Action Fabric](docs/31-action-fabric-where-halves-meet.md)
 
 ## Operating the Architecture

@@ -4,7 +4,7 @@ This document defines the maturity model for the AI Control Architecture.
 
 The purpose of the maturity model is to help organizations assess how well they control AI across the ten architecture pillars, identify gaps, prioritize improvement, and build a practical roadmap from ad hoc AI use to adaptive AI control.
 
-This model measures design-time control coverage across the pillars. For the runtime-defense maturity ladder (L0 to L5, from Shadow Mode to fully recursive machine-speed defense), see the [Runtime Defense Overview](27-rcdf-runtime-defense-overview.md). Together they answer both whether the right controls are in place and whether they can defend at speed.
+This model measures design-time control coverage across the pillars. For the runtime-defense maturity ladder (L0 to L5, from Shadow Mode to fully recursive machine-speed defense), see the [Runtime Defense Overview](27-rcdm-runtime-defense-overview.md). Together they answer both whether the right controls are in place and whether they can defend at speed.
 
 AI control maturity is not measured by how many AI products an enterprise has purchased.
 

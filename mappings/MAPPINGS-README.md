@@ -138,7 +138,7 @@ mappings/us-state-ai-laws-crosswalk.md
 | Mapping | Status | Purpose |
 |---|---|---|
 | NIST AI RMF | Planned | Map AI Control Architecture pillars to Govern, Map, Measure, and Manage functions. |
-| NIST CSF | Planned | Map the Runtime Defense model (RCDF) five functions (Govern, Observe, Anticipate, Disrupt, Adapt) to Identify, Protect, Detect, Respond, Recover. |
+| NIST CSF | Planned | Map the Runtime Defense model (RCDM) five functions (Govern, Observe, Anticipate, Disrupt, Adapt) to Identify, Protect, Detect, Respond, Recover. |
 | ISO/IEC 42001 | Planned | Map AI Control Architecture controls to AI management system expectations. |
 | EU AI Act | Planned | Map AI Control Architecture controls to high-risk AI governance, documentation, logging, transparency, oversight, robustness, and incident expectations. |
 | OWASP LLM Top 10 | Planned | Map AI security controls to LLM application threat categories. |

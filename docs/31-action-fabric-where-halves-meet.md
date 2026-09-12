@@ -9,7 +9,7 @@
 
 The two halves of the architecture meet at the Action Fabric. The design-time half decides which controls a use case requires; the runtime half enforces them as the AI acts. The Action Fabric is the governed point in the path of an action where a control stops being a policy and becomes a decision: admit, withhold, throttle, hold for a human, or reverse.
 
-This is the single canonical description of the Action Fabric in the architecture. The [Tool & Action Control](12-pillar-tool-and-action-control.md) pillar defines *what* an AI may do; this section defines *how* that decision is made and enforced at runtime. The [Disrupt](28-rcdf-five-functions.md) function acts here; the [adaptive engine](30-rcdf-adaptive-engine.md), where present, decides here; the [governance overlay](29-rcdf-governance-overlay.md) surrounds it.
+This is the single canonical description of the Action Fabric in the architecture. The [Tool & Action Control](12-pillar-tool-and-action-control.md) pillar defines *what* an AI may do; this section defines *how* that decision is made and enforced at runtime. The [Disrupt](28-rcdm-five-functions.md) function acts here; the [adaptive engine](30-rcdm-adaptive-engine.md), where present, decides here; the [governance overlay](29-rcdm-governance-overlay.md) surrounds it.
 
 ---
 

@@ -1,6 +1,6 @@
 # Executive Summary
 
-> AI Control Architecture, a vendor-neutral model for governing, securing, assuring, and containing enterprise AI, with the Runtime Defense model (RCDF) as its enforcement half.
+> AI Control Architecture, a vendor-neutral model for governing, securing, assuring, and containing enterprise AI, with the Runtime Defense model (RCDM) as its enforcement half.
 
 ---
 

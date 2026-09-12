@@ -63,9 +63,9 @@ npm start          # runs the content organizer, then serves a live preview
 5. **Section landing pages** (`/foundation/`, `/the-ten-pillars/`, …) are new pages that order the sidebar. They're additive (don't break any old URL); restyle or remove if you prefer flat groups.
 6. **Link spot-check.** The organizer reports 0 unresolved links, but eyeball a couple of cross-section links and any `#anchors`.
 
-## Adding RCDF later
+## Adding RCDM later
 
-Drop the RCDF markdown into a new source folder, add a mapping block in `build-content.mjs` (→ `content/rcdf/…`, url `/rcdf/…`), and it publishes under the same domain and key. No new purchase.
+Drop the RCDM markdown into a new source folder, add a mapping block in `build-content.mjs` (→ `content/rcdf/…`, url `/rcdf/…`), and it publishes under the same domain and key. No new purchase.
 
 ## Commands
 
