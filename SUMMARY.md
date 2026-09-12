@@ -27,7 +27,7 @@
 * [15 · Monitoring, Logging & Evidence](docs/15-pillar-monitoring-and-evidence.md)
 * [16 · Incident Containment & Recovery](docs/16-pillar-containment-and-recovery.md)
 
-## Runtime Defense (RCDM)
+## Runtime Cyber Defense (RCDM)
 
 * [27 · Runtime Defense Overview](docs/27-rcdm-runtime-defense-overview.md)
 * [28 · The Five Functions](docs/28-rcdm-five-functions.md)

@@ -1,4 +1,4 @@
-# Runtime Defense (RCDM)
+# Runtime Cyber Defense (RCDM)
 
 **Control question:** *How do these controls defend at machine speed, under human authority?*
 **Half:** Runtime.
