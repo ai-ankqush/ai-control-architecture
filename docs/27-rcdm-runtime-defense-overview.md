@@ -1,4 +1,10 @@
-# Runtime Cyber Defense (RCDM)
+---
+label: "27 · Overview"
+order: 973
+icon: shield
+---
+
+# Recursive Cyber Defense Model (RCDM)
 
 **Control question:** *How do these controls defend at machine speed, under human authority?*
 **Half:** Runtime.

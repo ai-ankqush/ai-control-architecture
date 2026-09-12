@@ -36,7 +36,7 @@ const GROUPS = {
 const SECTIONS = {
   "foundation": { order: 7000, label: "Foundation", icon: "book" },
   "the-ten-pillars": { order: 6000, label: "The Ten Pillars", icon: "shield-check" },
-  "runtime-defense-rcdm": { order: 5500, label: "Runtime Cyber Defense (RCDM)", icon: "shield" },
+  "runtime-defense-rcdm": { order: 5500, label: "Recursive Cyber Defense Model", icon: "shield" },
   "operating-the-architecture": { order: 5000, label: "Operating the Architecture", icon: "gear" },
   "reference": { order: 4000, label: "Reference", icon: "bookmark" },
   "standards-crosswalks": { order: 3000, label: "Standards Crosswalks", icon: "git-compare" },
