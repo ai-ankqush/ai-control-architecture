@@ -36,6 +36,7 @@ const GROUPS = {
 const SECTIONS = {
   "foundation": { order: 7000, label: "Foundation", icon: "book" },
   "the-ten-pillars": { order: 6000, label: "The Ten Pillars", icon: "shield-check" },
+  "runtime-defense-rcdf": { order: 5500, label: "Runtime Defense (RCDF)", icon: "shield" },
   "operating-the-architecture": { order: 5000, label: "Operating the Architecture", icon: "gear" },
   "reference": { order: 4000, label: "Reference", icon: "bookmark" },
   "standards-crosswalks": { order: 3000, label: "Standards Crosswalks", icon: "git-compare" },
@@ -48,6 +49,7 @@ const SECTIONS = {
 const CROSSWALKS = {
   "mappings-readme": [1000, "Crosswalks Overview"],
   "nist-ai-rmf-crosswalk": [900, "NIST AI RMF"],
+  "nist-csf-crosswalk": [850, "NIST CSF"],
   "iso-42001-crosswalk": [800, "ISO/IEC 42001"],
   "eu-ai-act-crosswalk": [700, "EU AI Act"],
   "sr-11-7-crosswalk": [600, "SR 11-7"],
@@ -91,6 +93,7 @@ async function buildPlan() {
     else if (num >= 7 && num <= 16) section = "the-ten-pillars";
     else if (num >= 17 && num <= 25) section = "operating-the-architecture";
     else if (num === 26) section = "reference";
+    else if (num >= 27 && num <= 31) section = "runtime-defense-rcdf";
     else section = "operating-the-architecture";
     const slug = base.toLowerCase();
     const title = cleanTitle(firstH1(await read(abs))) || slug;

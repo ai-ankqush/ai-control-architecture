@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This is the pillar that governs AI **as an actor.** Once an AI can call APIs, trigger workflows, update records, send communications, or move money, it is no longer producing suggestions, it is taking actions with real, often irreversible, effect. This pillar bounds what those actions can be, requires human authority for the consequential ones, and refuses to enforce any action it cannot contain or undo.
+This is the pillar that governs AI **as an actor.** Once an AI can call APIs, trigger workflows, update records, send communications, or move money, it is no longer producing suggestions, it is taking actions with real, often irreversible, effect. This pillar bounds what those actions can be, requires human authority for the consequential ones, and refuses to enforce any action it cannot contain or undo. How that decision is made and enforced at runtime is defined in [Where the Halves Meet: the Action Fabric](31-action-fabric-where-halves-meet.md).
 
 ---
 

@@ -23,6 +23,12 @@ The risk is the *combination*: deterministic authority granted to a probabilisti
 
 ---
 
+## One standard, two halves
+
+The architecture answers this in two halves. The **design-time half** answers what an AI can see, decide, and do, and which controls that authority demands: the ten pillars. The **runtime half** answers how those controls hold when the AI acts faster than a human can intervene: the [Runtime Defense model (RCDF)](27-rcdf-runtime-defense-overview.md). The two meet at the [Action Fabric](31-action-fabric-where-halves-meet.md), where a control stops being a policy and becomes an enforced decision. Deciding the right controls and enforcing them at machine speed are one discipline, not two.
+
+---
+
 ## What failure actually looks like
 
 Not science fiction. Enterprise control failures:

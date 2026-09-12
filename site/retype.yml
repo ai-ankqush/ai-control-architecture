@@ -14,7 +14,7 @@ start:
 
 branding:
   title: AI Control Architecture
-  label: v0.1.0
+  label: v0.2.0
 
 # Theme matched to Neo Control's dark console sidebar (from src/components/console/sidebar.tsx)
 theme:

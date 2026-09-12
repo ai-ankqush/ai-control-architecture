@@ -27,6 +27,14 @@
 * [15 · Monitoring, Logging & Evidence](docs/15-pillar-monitoring-and-evidence.md)
 * [16 · Incident Containment & Recovery](docs/16-pillar-containment-and-recovery.md)
 
+## Runtime Defense (RCDF)
+
+* [27 · Runtime Defense Overview](docs/27-rcdf-runtime-defense-overview.md)
+* [28 · The Five Functions](docs/28-rcdf-five-functions.md)
+* [29 · Governance Overlay](docs/29-rcdf-governance-overlay.md)
+* [30 · The Adaptive Engine](docs/30-rcdf-adaptive-engine.md)
+* [31 · Where the Halves Meet: the Action Fabric](docs/31-action-fabric-where-halves-meet.md)
+
 ## Operating the Architecture
 
 * [17 · Implementation Checklists](docs/17-implementation-checklists.md)
@@ -47,6 +55,7 @@
 
 * [Crosswalks Overview](mappings/MAPPINGS-README.md)
 * [NIST AI RMF](mappings/nist-ai-rmf-crosswalk.md)
+* [NIST CSF](mappings/nist-csf-crosswalk.md)
 * [ISO/IEC 42001](mappings/iso-42001-crosswalk.md)
 * [EU AI Act](mappings/eu-ai-act-crosswalk.md)
 * [SR 11-7](mappings/sr-11-7-crosswalk.md)
