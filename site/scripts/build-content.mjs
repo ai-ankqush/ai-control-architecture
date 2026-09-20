@@ -121,6 +121,7 @@ async function buildPlan() {
   // General / navigational pages (the EXPLORE group) + Start Here on top.
   const generals = [
     ["START-HERE.md", "start-here.md", "/start-here", "Start Here", 9600, "milestone"],
+    ["OPEN-SOURCE-LAUNCH.md", `${EXP}/open-source-launch.md`, `/${EXP}/open-source-launch`, "Open Source Launch", 1100, "unlock"],
     ["USEFUL-LINKS.md", `${EXP}/useful-links.md`, `/${EXP}/useful-links`, "Useful links", 1000, "link"],
     ["RESOURCES.md", `${EXP}/resources.md`, `/${EXP}/resources`, "Resources", 900, "download"],
     ["TRAINING.md", `${EXP}/training.md`, `/${EXP}/training`, "Training", 800, "mortar-board"],
