@@ -1,6 +1,16 @@
+---
+date: 2026-09-20
+author: Ankush Chowdhary
+category: [announcement]
+tags: [open-source, action-fabric, agpl, runtime]
+meta:
+  title: "Neo's AI Control Runtime is now open source"
+  description: "The control plane for AI authority is now yours to run. The core Neo AI Control Runtime, including the AI Action Fabric, is released under AGPL-3.0."
+---
+
 # Neo's AI Control Runtime is now open source
 
-_The control plane for AI authority is now yours to run._
+*The control plane for AI authority is now yours to run.*
 
 Today we are releasing the core Neo AI Control Runtime under the AGPL-3.0 licence.
 
