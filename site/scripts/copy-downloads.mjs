@@ -35,4 +35,14 @@ async function copyDir(srcAbs, destRel) {
 
 const dl = await copyDir(path.join(REPO, "resources"), "downloads");
 const st = await copyDir(path.join(__dirname, "..", "static"), "static");
-console.log(`postbuild: copied ${dl} download(s) -> /downloads and ${st} static file(s) -> /static`);
+
+// Unlisted Founding Members experience: served at /founding (no nav link, noindex).
+// Shared privately by URL until the rest of the founding-member pages are live.
+let fm = 0;
+try {
+  await fs.mkdir(path.join(OUT, "founding"), { recursive: true });
+  await fs.copyFile(path.join(__dirname, "..", "private", "founding.html"), path.join(OUT, "founding", "index.html"));
+  fm = 1;
+} catch { /* file not present yet — skip */ }
+
+console.log(`postbuild: copied ${dl} download(s) -> /downloads, ${st} static file(s) -> /static, ${fm} unlisted page -> /founding`);
