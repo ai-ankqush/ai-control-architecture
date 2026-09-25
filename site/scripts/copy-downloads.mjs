@@ -45,4 +45,7 @@ try {
   fm = 1;
 } catch { /* file not present yet — skip */ }
 
-console.log(`postbuild: copied ${dl} download(s) -> /downloads, ${st} static file(s) -> /static, ${fm} unlisted page -> /founding`);
+// Unlisted course sample lesson: served at /course-sample (no nav link, noindex).
+const cs = await copyDir(path.join(__dirname, "..", "private", "course-sample"), "course-sample");
+
+console.log(`postbuild: copied ${dl} download(s) -> /downloads, ${st} static file(s) -> /static, ${fm} unlisted page -> /founding, ${cs} file(s) -> /course-sample`);
