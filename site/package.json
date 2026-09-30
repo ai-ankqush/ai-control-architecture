@@ -1,14 +1,15 @@
 {
   "name": "aca-site",
   "private": true,
-  "description": "AI Control Architecture — Retype Pro docs site (aicontrolarchitecture.org)",
+  "description": "AI Control Architecture \u2014 Retype Pro docs site (aicontrolarchitecture.org)",
   "scripts": {
     "content": "node scripts/build-content.mjs",
     "prestart": "node scripts/build-content.mjs",
     "start": "retype start",
-    "prebuild": "node scripts/build-content.mjs",
+    "prebuild": "node scripts/build-content.mjs && node scripts/build-orla-kb.mjs",
     "build": "DOTNET_PROCESSOR_COUNT=1 DOTNET_gcServer=0 retype build --verbose",
-    "postbuild": "node scripts/copy-downloads.mjs"
+    "postbuild": "node scripts/copy-downloads.mjs",
+    "orla-kb": "node scripts/build-orla-kb.mjs"
   },
   "devDependencies": {
     "retypeapp": "^4.6.0"

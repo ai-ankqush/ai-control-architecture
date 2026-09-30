@@ -48,4 +48,7 @@ try {
 // Unlisted course sample lesson: served at /course-sample (no nav link, noindex).
 const cs = await copyDir(path.join(__dirname, "..", "private", "course-sample"), "course-sample");
 
-console.log(`postbuild: copied ${dl} download(s) -> /downloads, ${st} static file(s) -> /static, ${fm} unlisted page -> /founding, ${cs} file(s) -> /course-sample`);
+// Orla, the site guide: widget + owl served at /orla/* (chat backend is api/orla.js).
+const orla = await copyDir(path.join(__dirname, "..", "private", "orla"), "orla");
+
+console.log(`postbuild: copied ${dl} download(s) -> /downloads, ${st} static file(s) -> /static, ${fm} unlisted page -> /founding, ${cs} file(s) -> /course-sample, ${orla} file(s) -> /orla`);

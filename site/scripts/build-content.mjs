@@ -40,6 +40,7 @@ const HEAD_HTML = `<style>
   }
 }
 </style>
+<script src="/orla/orla.js" defer></script>
 `;
 const MARKETPLACE_URL = "https://marketplace.aicontrolarchitecture.org";
 
