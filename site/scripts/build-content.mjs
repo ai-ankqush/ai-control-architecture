@@ -41,6 +41,8 @@ const HEAD_HTML = `<style>
 }
 </style>
 <script src="/orla/orla.js" defer></script>
+<script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 `;
 const MARKETPLACE_URL = "https://marketplace.aicontrolarchitecture.org";
 
