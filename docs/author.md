@@ -22,4 +22,4 @@ My goal is not to own it. It is to be its originator and steward, and to see it 
 
 ---
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

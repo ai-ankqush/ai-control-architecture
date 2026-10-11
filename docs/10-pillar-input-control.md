@@ -44,6 +44,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 - **Instruction integrity**: structure prompts and system messages so user or retrieved content cannot override policy, and so the model's guardrails are not addressable by input.
 - **Reach-limiting**: the strongest mitigation is downstream: even a successful injection should hit a bounded data boundary ([09](09-pillar-data-boundary-control.md)) and an allow-listed, approval-gated action set ([12](12-pillar-tool-and-action-control.md)). Input control and action control are defense-in-depth for each other.
 - **Content provenance**: where feasible, track and weight the trustworthiness of the sources feeding the context.
+- **Untrusted-content envelope**: give agents a minimised, labelled view of external content (identifiers, a short snippet, and a flag that it is untrusted data) rather than the raw text. Flag instruction-like text, and hold any action that responds to content flagged as suspect for a person.
 
 ---
 
@@ -81,4 +82,4 @@ Maps to NIST AI RMF **Measure/Manage**, ISO/IEC 42001 operational controls, EU A
 
 **Next:** [11 · Output & Decision Control](11-pillar-output-and-decision-control.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

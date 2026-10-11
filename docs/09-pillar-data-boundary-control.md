@@ -46,6 +46,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 - **Sensitive-class handling**: classification-aware exclusion, redaction, or masking of regulated or confidential data unless the use case is explicitly approved for it.
 - **Egress and context boundaries**: prevent confidential context from being carried into outputs or destinations outside the approved space; constrain what the AI can *expose*, not only what it can *read*.
 - **Vendor data terms**: for embedded/vendor AI, know what is sent, where it is processed, whether it is retained, and whether it trains the vendor's models; bound it contractually and technically.
+- **Outbound scanning**: scan what the AI sends out (posts, messages, tool arguments) for credentials, keys, and internal identifiers, not only the data coming in. Block on a match; this is a hard limit, not a judgment call.
 
 ---
 
@@ -83,4 +84,4 @@ Maps to NIST AI RMF **Map/Manage**, ISO/IEC 42001 (data governance for AI), EU A
 
 **Next:** [10 · Prompt & Input Control](10-pillar-input-control.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

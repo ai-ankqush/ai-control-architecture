@@ -11,7 +11,7 @@ The goal of the roadmap is to make the project easier to use, easier to adopt, a
 # Current Version
 
 ```text
-v0.1.0: Initial Public Draft
+v0.3.0: Agent and Action Governance
 ```
 
 ## Current Focus
@@ -451,7 +451,27 @@ How do we make human review meaningful?
 How do we control vendor AI features before they are enabled?
 ```
 
-# v0.3.0: Control Mapping and Traceability
+# v0.3.0: Agent and Action Governance (released)
+
+Nine requirements for AI that acts and speaks for the organization, drawn from running governed agents end to end. The catalogue grows from 34 to 43 requirements; no existing requirement changes meaning.
+
+```text
+ACA-07-05  Approved model recorded per acting role; a different model does not act until re-approved
+ACA-11-04  Claims made on the organization's behalf trace to an approved fact source
+ACA-11-05  AI disclosure on external content, applied by the control point
+ACA-12-05  Versioned enforcement policy, approved by business owner and security; unapproved = non-consequential only
+ACA-12-06  Refusals return a reason and the responses open to the AI, within a retry budget
+ACA-13-04  Held actions expire and never execute late
+ACA-14-04  Model-based checks are pinned, tested, fail closed, and never override a block
+ACA-15-04  The target system's record is reconciled against the control point's record
+ACA-16-04  Restart after a stop needs named, strongly authenticated approval; two people after a full stop
+```
+
+Also in this release: the refusal contract, the three kinds of check, and policy approval in the [Action Fabric](docs/31-action-fabric-where-halves-meet.md); three new failure scenarios; Article 50 in the EU AI Act crosswalk; new fields in the AI Agent Control template.
+
+---
+
+# Next: Control Mapping and Traceability
 
 ## Goal
 

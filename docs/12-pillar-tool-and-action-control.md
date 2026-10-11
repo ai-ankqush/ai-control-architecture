@@ -36,6 +36,8 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | ACA-12-02 | High-impact actions require approval or step-up before execution. | T4 | Enforced |
 | ACA-12-03 | No action class is enforced live without a defined containment or compensation path. | T4 | Enforced |
 | ACA-12-04 | Every action is logged with the requesting identity, inputs, and outcome. | T4 | Verified |
+| ACA-12-05 | The enforcement policy for an action-capable AI is versioned, machine-readable, and approved by both the business owner and security before it is enforced; an unapproved or expired policy limits the AI to non-consequential actions. | T4 | Enforced |
+| ACA-12-06 | A refused or held action returns its reason and the responses open to the AI, within a bounded retry budget; unchanged resubmission of refused content is stopped. | T4 | Enforced |
 
 ---
 
@@ -68,6 +70,8 @@ Risk tier and [boundary source](03-core-thesis.md) move these defaults; the clas
 - **Containment precondition**: do not turn on live enforcement for an action class that has no rollback, compensation, or containment path ([pillar 16](16-pillar-containment-and-recovery.md)). Never enforce what you cannot undo.
 - **Agent-specific controls**: for agents that chain actions, bound the loop: step budgets, scope per task, and human gates on high-impact steps (see the [AI Agent Control template](../templates/ai-agent-control-template.md)).
 - **Full action logging**: every attempted and executed action recorded for [monitoring](15-pillar-monitoring-and-evidence.md) and reconstruction.
+- **Co-approved enforcement policy** (ACA-12-05): express the rules for an action-capable AI (allowed actions per agent, limits, caps, approved models) as a versioned, machine-readable policy. Business owner and security both approve each version before it is enforced, approvals expire, and any change is a new version. While the policy is unapproved or expired, the AI is limited to non-consequential actions such as reading and drafting.
+- **Refusals that explain themselves** (ACA-12-06): a refused or held action returns the rule that stopped it, why, and what the AI may do next: cite evidence, revise, or withdraw. Revisions draw on a small retry budget; identical resubmission of refused content is stopped; rules that are a person's call are marked as not negotiable. An agent told why it was refused stops looking for a way around the refusal.
 
 ---
 
@@ -79,6 +83,8 @@ Risk tier and [boundary source](03-core-thesis.md) move these defaults; the clas
 | Approval / step-up on high-impact | - | - | - | Required (enforced) | Required (enforced) |
 | Containment path before enforcement | - | - | - | Required | Required |
 | Full action logging | - | - | - | Required | Required |
+| Co-approved, versioned enforcement policy | - | - | - | Required (enforced) | Required (enforced) |
+| Refusal reason and retry budget | - | - | - | Required | Required |
 
 ---
 
@@ -105,4 +111,4 @@ Maps to NIST AI RMF **Manage**, ISO/IEC 42001 operational controls, EU AI Act (h
 
 **Next:** [13 · Human Accountability Model](13-pillar-human-accountability.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

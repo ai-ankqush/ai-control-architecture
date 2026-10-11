@@ -34,6 +34,8 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | ACA-11-01 | Output that influences a consequential decision is identified as such. | T3 | Evidenced |
 | ACA-11-02 | High-impact decisions require human validation before effect. | T3 | Enforced |
 | ACA-11-03 | AI-influenced decisions are recorded with the output and rationale. | T3 | Evidenced |
+| ACA-11-04 | Claims made on the organization's behalf in AI-generated content trace to an approved fact source; unsupported claims are held for a person or revised. | T3 | Enforced |
+| ACA-11-05 | AI-generated content published to people outside the organization carries an AI disclosure applied by the control point, which the AI cannot remove. | T3 | Enforced |
 
 ---
 
@@ -44,6 +46,8 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 - **Confirm-or-correct gates**: the accountable human confirms or corrects the AI's recommendation, and that act is the decision of record, a direct expression of the [judgement principle](03-core-thesis.md): AI proposes; a human decides.
 - **Decision record**: capture the output, the human action, the rationale, and the owner, so an AI-influenced decision can be reconstructed and defended.
 - **Output validation**: where output feeds automated steps, validate structure, grounding, and policy compliance before it propagates.
+- **Claims traced to approved facts** (ACA-11-04): when AI speaks for the organization, keep an approved fact source owned by the business and check every claim about the organization against it. Hold unsupported claims for a person or send them back for revision. A recurring hold on the same claim usually means a missing fact, not a broken rule: fix the fact source.
+- **Disclosure applied by the control point** (ACA-11-05): when AI-generated content is published to people outside the organization, the control point appends the AI disclosure. The AI cannot remove or reword it, and content with no disclosure configured is not published.
 
 ---
 
@@ -55,6 +59,8 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | Human validation of high-impact | - | - | Required (enforced) | Required (enforced) | Required (enforced) |
 | Decision record kept | - | - | Required | Required | Required |
 | Output grounding/validation | - | Recommended | Required | Required | Required |
+| Claims traced to approved facts | - | - | Required (enforced) | Required (enforced) | Required (enforced) |
+| AI disclosure on external content | - | - | Required (enforced) | Required (enforced) | Required (enforced) |
 
 ---
 
@@ -81,4 +87,4 @@ Maps to NIST AI RMF **Measure/Manage**, ISO/IEC 42001 (human oversight), EU AI A
 
 **Next:** [12 · Tool & Action Control](12-pillar-tool-and-action-control.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

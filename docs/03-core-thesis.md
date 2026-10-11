@@ -121,4 +121,4 @@ That is the thesis in one line: **make AI's authority bounded, provable, and rev
 
 **Next:** [04 · Architecture Principles](04-architecture-principles.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

@@ -110,4 +110,4 @@ If you are new, continue through the foundation (03 → 05). If you are implemen
 
 **Next:** [03 · Core Thesis](03-core-thesis.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

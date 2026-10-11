@@ -34,6 +34,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | ACA-16-01 | Each tiered use case has a tested means to disable the AI capability quickly. | T4 | Enforced |
 | ACA-16-02 | High-impact actions have a containment or compensation/rollback path. | T4 | Enforced |
 | ACA-16-03 | Recovery from an AI incident is owned, documented, and exercised. | T4 | Evidenced |
+| ACA-16-04 | Restoring an AI capability after it was disabled requires named, strongly authenticated approval, and two people after a full stop. | T4 | Enforced |
 
 ---
 
@@ -58,6 +59,8 @@ The hard rule: **no action class is enforced live without a reversibility answer
 - **Compensation / rollback**: for actions that ran, a defined way to undo or offset them, and a recovery ledger of what was done so it can be reversed.
 - **Reversibility-graduated autonomy**: grant more autonomy where actions are reversible; require more human authority where they are not.
 - **Recovery ownership & exercises**: a named owner for "make it right," a documented recovery procedure, and periodic exercise so it works when needed.
+- **What "disabled" means**: nothing passes. Work in progress stops at its next step because every next action needs a fresh decision; completed actions stay done until explicitly undone through the compensation path. Stopping needs no step-up.
+- **Restart needs proof** (ACA-16-04): restoring a disabled capability requires a named approver with strong authentication, and two different people after a full stop. Stopping is cheap; starting needs proof.
 
 The incident how-to lives in the operating docs ([failure scenarios and incident guidance](DOCS-README.md)); this pillar defines the containment and recovery that are *required*.
 
@@ -71,6 +74,7 @@ The incident how-to lives in the operating docs ([failure scenarios and incident
 | Containment / compensation path | - | - | - | Required | Required (before enforcement) |
 | Recovery owner & procedure | - | - | - | Required | Required (exercised) |
 | Reversibility classification | - | - | Recommended | Required | Required |
+| Named, strongly authenticated restart | - | - | - | Required | Required (two people after a full stop) |
 
 ---
 
@@ -97,4 +101,4 @@ Maps to NIST AI RMF **Manage** (incident response and recovery), ISO/IEC 42001 (
 
 **Next:** the operating section, [implementation, maturity, playbook, governance, metrics, assurance, and triage](DOCS-README.md).
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

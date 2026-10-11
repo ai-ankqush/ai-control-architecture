@@ -36,6 +36,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | ACA-07-02 | Each use case has a named accountable owner recorded at intake. | T1 | Declared |
 | ACA-07-03 | Each use case is assigned a risk tier before controls are selected. | T1 | Evidenced |
 | ACA-07-04 | The inventory is reconciled on a defined cadence and on material change. | T2 | Evidenced |
+| ACA-07-05 | The approved model for each AI role that can act is recorded; a different model does not act in that role until reassessed and re-approved. | T4 | Enforced |
 
 ---
 
@@ -71,6 +72,8 @@ Tier from the highest material risk driver, not an average. Tier up when either 
 - **Discovery**: actively find shadow AI: vendor-AI feature flags in existing SaaS, model API usage, agent frameworks, and financial and identity signals that reveal AI in use.
 - **Classification**: apply the consequence × autonomy tiering at intake and on change.
 - **Lifecycle**: track state from proposed → live → retired; reconcile on cadence.
+- **Approved model per role** (ACA-07-05): for AI that can act, record which model is approved for each role (the drafting agent, the publishing agent). A different model in that role is a material change: it does not act until the use case is reassessed and the change approved. Enforce it at the control point by checking the model the agent declares against the approved one.
+- **Component-level reconciliation**: reconcile the inventory at component level too (agents, tools, models, egress destinations, and the names of the secrets they hold) by comparing the declared inventory with the running configuration automatically, and failing on any difference.
 
 ---
 
@@ -82,6 +85,7 @@ Tier from the highest material risk driver, not an average. Tier up when either 
 | Named owner | Required | Required | Required | Required | Required |
 | Risk tier assigned | Required | Required | Required | Required | Required |
 | Reconciliation cadence | Periodic | Regular | Regular | Continuous / on change | Continuous / on change |
+| Approved model per acting role | - | - | - | Required (enforced) | Required (enforced) |
 
 All ten pillars apply at every tier; the tier sets the *depth* of control, not which pillars are in scope. A "-" in any pillar's tier-guidance table means there is no distinct required control at that tier, not that the pillar is absent, the same pillar simply applies at lighter depth. See [Tiers and pillars](06-requirements-catalogue.md) in the catalogue.
 
@@ -112,4 +116,4 @@ See [Common Failure Scenarios](DOCS-README.md) for worked examples.
 
 **Next:** [08 · AI Identity & Access Control](08-pillar-ai-identity-and-access-control.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

@@ -138,4 +138,4 @@ That is the purpose of AI Control Architecture: to let enterprises move fast on 
 
 **Next:** [02 · Introduction](02-introduction.md) · [03, Core Thesis](03-core-thesis.md) · [Quickstart](../QUICKSTART.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

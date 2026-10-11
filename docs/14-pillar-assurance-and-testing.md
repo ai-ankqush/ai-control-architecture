@@ -34,6 +34,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | ACA-14-01 | Controls are tested before go-live, proportionate to tier. | T3 | Verified |
 | ACA-14-02 | High-impact and autonomous use cases undergo adversarial testing of input, output, and action controls. | T5 | Verified |
 | ACA-14-03 | Test results are retained as evidence and re-run on material change. | T3 | Verified |
+| ACA-14-04 | A model-based check used as a control is pinned to a version, evaluated against known-bad cases before adoption, fails closed, and never overrides a deterministic block. | T4 | Verified |
 
 ---
 
@@ -44,6 +45,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 - **Adversarial / red-team testing**: for high-impact and autonomous use cases, actively try to break input, output, and action controls (prompt injection, boundary escape, unauthorized action) rather than only confirming happy paths.
 - **Regression on change**: model updates, new tools, new data sources, or scope changes re-trigger the relevant tests; a control verified last quarter is not assumed to hold today.
 - **Evidence capture**: results are recorded as the *verified* boundary evidence the other pillars point to.
+- **Model-based checks are controls too** (ACA-14-04): when a model judges meaning (is this claim supported, is this topic sensitive), treat it as a control: pin the model version, test it against known-bad cases before adoption, make every error, timeout, or unreadable answer keep the hold, and never let it override a deterministic block. Measure whether it makes a material difference before building it.
 
 The how-to for running assurance and audit lives in the operating guide ([Assurance & Audit Guide](DOCS-README.md)); this pillar defines what assurance is *required*.
 
@@ -57,6 +59,7 @@ The how-to for running assurance and audit lives in the operating guide ([Assura
 | Adversarial testing | - | - | - | Recommended | Required |
 | Retain results as evidence | - | - | Required | Required | Required |
 | Re-test on material change | - | - | Required | Required | Required |
+| Model-based checks pinned and tested | - | - | - | Required | Required |
 
 ---
 
@@ -83,4 +86,4 @@ Maps to NIST AI RMF **Measure**, ISO/IEC 42001 (verification, validation, perfor
 
 **Next:** [15 · Monitoring, Logging & Evidence](15-pillar-monitoring-and-evidence.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

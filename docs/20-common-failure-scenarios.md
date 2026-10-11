@@ -77,6 +77,9 @@ These scenarios should be adapted to the organization’s actual AI use cases.
 | Model or prompt change breaks control | Regression testing missing | Assurance, Prompt/Input |
 | Data retained or reused unexpectedly | Vendor/data controls weak | Data Boundary, Vendor |
 | AI failure has no recovery path | Recovery not designed | Incident, Tool/Action |
+| Action taken around the control point | Platform-side reconciliation missing | Monitoring/Evidence, Incident |
+| Held action runs on stale context | Hold expiry missing | Accountability, Tool/Action |
+| AI speaks beyond the approved facts | Claim grounding missing | Output/Decision, Accountability |
 
 ---
 
@@ -1735,6 +1738,7 @@ A change to model version, provider, system prompt, retrieval prompt, tool instr
 
 - prompt versioning
 - model/provider change review
+- approved model recorded per acting role, enforced at the control point (ACA-07-05)
 - regression testing triggers
 - approval for prompt changes
 - rollback capability
@@ -1959,7 +1963,189 @@ An AI-generated output, decision, record, action, or workflow causes harm, but t
 
 ---
 
-# 23. Cross-Scenario Themes
+# 23. Failure Scenario 21: Action Taken Around the Control Point
+
+## What Happens
+
+An action appears on the target system (a post on a company page, a change in an application) that never passed through the control point. Someone, or something, used credentials that reach the target directly.
+
+## Why It Happens
+
+- the target system still accepts a second credential, such as a shared account password or an old API token
+- the control point only sees what is sent through it, so it cannot notice what is not
+- nobody compares the target system's own record with the control point's record
+
+## Affected AI Patterns
+
+- Agents acting on external platforms
+- Tool-using AI
+- Customer-facing AI
+
+## Affected Pillars
+
+- Monitoring, logging, and evidence
+- Identity and access control
+- Incident containment and recovery
+
+## Control Failures
+
+- no reconciliation between the target system and the control point
+- credentials not limited to the control point
+- no automatic containment on a mismatch
+
+## Potential Impact
+
+- unreviewed public content
+- actions with no owner or record
+- false confidence that every action is governed
+
+## Required Controls
+
+- reconcile the target system's activity against the control point's record on a cadence and on demand (ACA-15-04)
+- contain automatically on an unmatched action
+- hold the only working credential at the control point
+- alert the owner and security
+
+## Evidence Needed
+
+- reconciliation reports
+- the unmatched objects and when they were found
+- containment record
+- credential inventory for the target system
+
+## Assurance Tests
+
+- perform an action directly on the target with a test credential and confirm reconciliation finds it and contains
+- confirm the control point's own actions never appear as unmatched
+
+## Containment Actions
+
+- stop all agents
+- rotate every credential that reaches the target
+- remove or review the unmatched content
+- find the actor, then restart only with two named approvers (ACA-16-04)
+
+---
+
+# 24. Failure Scenario 22: Held Action Runs on Stale Context
+
+## What Happens
+
+An action held for a person waits for days. Someone approves it later and it runs, but the conversation, the price, or the situation it answered has moved on.
+
+## Why It Happens
+
+- holds have no expiry
+- approval queues are not watched
+- approval of the action is treated as approval of its timing
+
+## Affected AI Patterns
+
+- Agents
+- Customer-facing AI
+- Tool-using AI
+
+## Affected Pillars
+
+- Human accountability model
+- Tool and action control
+
+## Control Failures
+
+- no expiry on held actions
+- no owner for the approval queue
+
+## Potential Impact
+
+- out-of-date or embarrassing public content
+- actions that contradict later decisions
+
+## Required Controls
+
+- expire undecided held actions after a defined window and never execute them afterwards (ACA-13-04)
+- tell the owner what expired
+- let the agent submit new work rather than revive the old action
+
+## Evidence Needed
+
+- expiry records
+- queue age reports
+
+## Assurance Tests
+
+- hold an action past the window and confirm it cannot be approved
+- confirm expiry is reported to the owner
+
+## Containment Actions
+
+- reject expired actions
+- review queue ownership and window length
+
+---
+
+# 25. Failure Scenario 23: AI Speaks Beyond the Approved Facts
+
+## What Happens
+
+An AI writing on the organization's behalf makes a claim about the product, a customer, a capability, or a result that no approved source supports. Under pressure for reach, it fills gaps in what it knows with plausible statements.
+
+## Why It Happens
+
+- no approved fact source for the AI to draw on
+- claims are checked by keyword or not at all
+- the same unanswered question keeps coming up and nobody adds the answer
+
+## Affected AI Patterns
+
+- Customer-facing AI
+- Marketing and social agents
+- Decision-supporting AI
+
+## Affected Pillars
+
+- Output and decision control
+- Human accountability model
+- AI assurance and testing
+
+## Control Failures
+
+- no fact source
+- no claim check before publishing
+- no disclosure that content is AI-generated
+
+## Potential Impact
+
+- misleading statements made in the organization's name
+- regulatory exposure for advertising or AI transparency
+- loss of trust when a claim is corrected publicly
+
+## Required Controls
+
+- a business-owned approved fact source; claims traced to it, unsupported claims held or revised (ACA-11-04)
+- AI disclosure appended by the control point (ACA-11-05)
+- a model-based claim check that is pinned, tested and fails closed (ACA-14-04)
+- track recurring holds and add the missing facts
+
+## Evidence Needed
+
+- the approved fact source and its owner
+- held claims and their outcomes
+- claim-check test results against invented claims
+
+## Assurance Tests
+
+- submit invented claims that borrow wording from real facts and confirm they are held
+- confirm published content carries the disclosure and the AI cannot remove it
+
+## Containment Actions
+
+- remove or correct the content
+- add or fix the fact
+- review what else the AI said on the same subject
+
+---
+
+# 26. Cross-Scenario Themes
 
 Across these scenarios, the same themes repeat.
 
@@ -2045,7 +2231,7 @@ High-risk AI must have containment, recovery, and restart criteria.
 
 ---
 
-# 24. Using Scenarios for Assurance
+# 27. Using Scenarios for Assurance
 
 These scenarios can be converted into test cases.
 
@@ -2064,7 +2250,7 @@ Example:
 
 ---
 
-# 25. Using Scenarios for Incident Tabletop Exercises
+# 28. Using Scenarios for Incident Tabletop Exercises
 
 These scenarios can also be used for tabletop exercises.
 
@@ -2107,7 +2293,7 @@ What control changes follow?
 
 ---
 
-# 26. Related Templates
+# 29. Related Templates
 
 Use these templates when applying the scenarios:
 
@@ -2124,7 +2310,7 @@ templates/ai-incident-containment-recovery-template.md
 
 ---
 
-# 27. Summary
+# 30. Summary
 
 AI failure scenarios are predictable.
 

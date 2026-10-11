@@ -120,4 +120,4 @@ Each pillar (07–16) specifies the controls for its surface. The [Requirements 
 
 **Next:** [06 · Requirements Catalogue](06-requirements-catalogue.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

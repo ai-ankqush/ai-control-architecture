@@ -34,6 +34,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | ACA-15-01 | Activity is logged sufficiently to reconstruct what AI saw, produced, decided, and did. | T2 | Verified |
 | ACA-15-02 | Logs are tamper-evident and retained per policy. | T3 | Verified |
 | ACA-15-03 | Anomalous or policy-violating behavior is detectable and alertable. | T4 | Verified |
+| ACA-15-04 | Actions recorded by the target system are reconciled against the control point's record on a defined cadence; an action with no matching record triggers containment. | T4 | Enforced |
 
 ---
 
@@ -44,6 +45,9 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 - **Detection & alerting**: surface anomalies and policy violations (boundary-escape attempts, unauthorized action attempts, injection signatures, unusual volume or scope) to the people and systems that can respond.
 - **Feed the response path**: monitoring is the trigger for [containment](16-pillar-containment-and-recovery.md); interdictions and hostile-flagged behavior should reach the SOC/response function.
 - **Privacy-aware**: log what is needed for reconstruction and control, minimizing sensitive content; reference rather than duplicate regulated data where possible.
+- **Platform reconciliation** (ACA-15-04): compare what the target system recorded (a platform's activity feed, a system's audit log) with the control point's own record. An action on the target with no matching record went around the control point: contain first, then investigate. Run it on a cadence and on demand.
+- **Ledger and transcripts**: keep a hash-chained decision ledger (verdicts, hashes of content, identities) for the long term, and raw model transcripts for a short, defined period. Deleting transcripts then does not break the audit trail.
+- **Behavioural drift and tripwires**: baseline the share of held and blocked actions and alert when it shifts; plant honeytokens (decoy credentials) and stop any agent that uses one.
 
 The metrics and reporting how-to lives in the operating guide ([Metrics & Reporting](DOCS-README.md)); this pillar defines the monitoring and evidence that are *required*.
 
@@ -57,6 +61,7 @@ The metrics and reporting how-to lives in the operating guide ([Metrics & Report
 | Tamper-evidence & retention | - | Recommended | Required | Required | Required |
 | Anomaly detection & alerting | - | - | Recommended | Required | Required |
 | Response-path integration | - | - | Recommended | Required | Required |
+| Platform reconciliation | - | - | - | Required | Required |
 
 ---
 
@@ -83,4 +88,4 @@ Maps to NIST AI RMF **Measure/Manage**, ISO/IEC 42001 (logging, monitoring, oper
 
 **Next:** [16 · Incident Containment & Recovery](16-pillar-containment-and-recovery.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

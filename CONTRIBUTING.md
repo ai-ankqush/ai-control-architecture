@@ -70,4 +70,4 @@ Questions about stewardship, conformance, or use of the name: neocontrol.ai.
 
 ---
 
-*Version 0.1.0 · Architecture licensed under [CC BY 4.0](LICENSE.md) · Stewarded by Neo Control · neocontrol.ai*
+*Version 0.3.0 · Architecture licensed under [CC BY 4.0](LICENSE.md) · Stewarded by Neo Control · neocontrol.ai*

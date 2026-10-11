@@ -49,6 +49,40 @@ The class-and-reversibility pairing is what makes the standard machine-readable 
 
 ---
 
+## The refusal contract
+
+A verdict that only says "no" teaches an agent to look for another way. When the Action Fabric withholds or escalates an action, it returns to the agent ([ACA-12-06](12-pillar-tool-and-action-control.md)):
+
+- **The reason**: which rule stopped the action and why, in terms the agent can act on.
+- **Whether it is negotiable**: some refusals the agent may resolve itself (a claim with no source); others are a person's call (who the organization may speak to, a sensitive topic, an authority limit) and are marked as such.
+- **The responses open to it**: cite evidence for an evidence hold, revise the action, or withdraw it.
+- **A retry budget**: a small, fixed number of revisions per action. When it is spent, a person decides.
+- **A repeat stop**: resubmitting content that was already refused, unchanged, is stopped outright.
+
+Evidence the agent cites is checked by the Fabric, never taken on the agent's word. Every exchange is recorded with the verdict, so the audit shows not just what was refused but what the agent did next.
+
+---
+
+## Three kinds of check
+
+Every rule the Fabric applies is one of three kinds. Placing a rule in the wrong kind is what makes governance brittle.
+
+| Kind | Decides | Examples | How it must behave |
+|---|---|---|---|
+| **Code** | Facts about the action | identity, tool, target, caps, credentials in content, disclosure, scope | Deterministic, exact, cheap. Carries most of the protection. |
+| **Model** | Meaning | is this claim supported by the approved facts, is this topic sensitive, is this content hostile | Pinned, tested against known-bad cases before adoption, fails closed, may relax only the specific hold it was built for, never overrides a block ([ACA-14-04](14-pillar-assurance-and-testing.md)). |
+| **Person** | Authority and trade-offs | speaking to someone who never engaged, accepting a risk, restarting after a stop | Named, recorded, time-bound ([ACA-13-04](13-pillar-human-accountability.md)). |
+
+A rule that keeps needing word-level tuning is a model-kind check written as code: move it rather than tune it. A model check should earn its place: replay real held actions and known-bad cases through it and adopt it only if it materially reduces what reaches a person without letting anything through that should be stopped. Human rulings are recorded with their reasons and become the labelled data that model checks are re-tested against.
+
+---
+
+## Who sets the policy
+
+The policy the Fabric enforces is itself governed ([ACA-12-05](12-pillar-tool-and-action-control.md)). It is versioned and machine-readable, and the business owner and security both approve each version before it is enforced. Approval expires. Any change, including a different model in an acting role ([ACA-07-05](07-pillar-ai-inventory-and-classification.md)), is a new version. Until a version is approved, the Fabric admits only non-consequential actions such as reading and drafting.
+
+---
+
 ## Why it is the join
 
 The Action Fabric is where the standard stops being two documents and becomes one system. A control defined in the design-time half has no effect until something enforces it in the path of the action; a runtime defense has nothing to enforce until the design-time half tells it which controls apply. The Fabric is the seam. It is also the point that must be open: for the architecture to be a standard anyone can build on, the Action Fabric's contract, its action-class taxonomy, reversibility grades, authority format, and audit schema, are published so that any implementation can conform, and any engine can act through it under the same governance.

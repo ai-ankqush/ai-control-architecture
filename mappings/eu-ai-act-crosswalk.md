@@ -108,6 +108,7 @@ These pillars can support operational readiness for AI governance, high-risk AI 
 | Technical documentation | architecture decision records; control assessments; requirements catalogue; evidence packages |
 | Record-keeping and logging | monitoring, logging, evidence; event taxonomy; reconstructability |
 | Transparency to deployers | output/decision control; user guidance; limitations; instructions; accountability |
+| Transparency of AI-generated content (Article 50) | AI disclosure applied by the control point (ACA-11-05); claims traced to approved facts (ACA-11-04) |
 | Human oversight | human accountability model; decision owner; meaningful review; contextual reconstructability |
 | Accuracy, robustness, cybersecurity | assurance and testing; adversarial testing; output validation; security controls |
 | Quality management | governance operating model; maturity model; metrics; continual improvement |
@@ -525,6 +526,20 @@ templates/ai-output-and-decision-control-template.md
 templates/ai-human-accountability-template.md
 templates/ai-vendor-assessment-template.md
 ```
+
+---
+
+## AI-Generated Content Shown to People (Article 50)
+
+Article 50 sets transparency obligations for AI that interacts with people or generates content they see. Where an organization's AI publishes or sends content to people outside it (posts, replies, messages), the architecture supports this through:
+
+| Requirement | Contribution |
+|---|---|
+| ACA-11-05 | The control point appends the AI disclosure to external content; the AI cannot remove it, and content is not published without it. |
+| ACA-11-04 | Claims made in the organization's name trace to an approved fact source, so disclosed AI content is also accurate content. |
+| ACA-12-05 | The disclosure text and the fact source are part of the co-approved enforcement policy. |
+
+Confirm the wording and placement of the disclosure against the final guidance and codes of practice for Article 50, and against the platform's own automation and labelling rules.
 
 ---
 

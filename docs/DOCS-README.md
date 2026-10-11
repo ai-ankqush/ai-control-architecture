@@ -110,4 +110,4 @@ The AI Control Architecture is open and openly licensed under [CC BY 4.0](../LIC
 
 ---
 
-*Version 0.1.0 · Architecture licensed under [CC BY 4.0](../LICENSE.md) · Stewarded by Neo Control · neocontrol.ai*
+*Version 0.3.0 · Architecture licensed under [CC BY 4.0](../LICENSE.md) · Stewarded by Neo Control · neocontrol.ai*

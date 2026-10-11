@@ -250,6 +250,35 @@ Select one:
 
 ---
 
+## Approved Model per Role (ACA-07-05)
+
+List each role this agent system has that can act, and the model approved for it. A different model in a role is a material change: it does not act until reassessed and re-approved.
+
+| Role | Approved model and version | Enforced where | Approved by / date |
+|---|---|---|---|
+| [e.g. Publisher] | [model id] | [control point] | [names / date] |
+
+## Enforcement Policy (ACA-12-05)
+
+```text
+Policy location: [repository / system]
+Policy version: [e.g. 1.1]
+Approved by business owner: [name / date]
+Approved by security: [name / date]
+Approval expires: [date]
+Behaviour when unapproved or expired: [e.g. read and draft only]
+```
+
+## Restart Approval (ACA-16-04)
+
+```text
+Who may restart after a stop: [named people]
+Authentication required: [e.g. MFA]
+Two-person rule after a full stop: [Yes / No]
+```
+
+---
+
 # 5. Data Boundary
 
 ## Data Sources Accessible to Agent
@@ -456,6 +485,26 @@ Select all that apply:
 
 ```text
 [Describe controls that prevent the agent from bypassing approval]
+```
+
+## Held-Action Expiry and Refusals (ACA-13-04, ACA-12-06)
+
+```text
+Held actions expire after: [e.g. 72 hours]
+What happens on expiry: [rejected; owner notified]
+Refusals return reason and options to the agent: [Yes / No]
+Retry budget per action: [e.g. 1 revision]
+Identical resubmission stopped: [Yes / No]
+```
+
+## Approved Fact Source and AI Disclosure (ACA-11-04, ACA-11-05)
+
+```text
+Approved fact source: [location]
+Fact source owner: [business owner]
+How unsupported claims are handled: [held for a person / sent back for revision]
+Disclosure text appended by the control point: [text]
+Channels where disclosure applies: [e.g. LinkedIn, X, email]
 ```
 
 ---

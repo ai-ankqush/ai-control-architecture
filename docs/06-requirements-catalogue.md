@@ -73,6 +73,7 @@ Representative requirements per pillar. This set is normative and versioned; it 
 | ACA-07-02 | Each use case **SHALL** have a named accountable owner recorded at intake. | T1 | Declared |
 | ACA-07-03 | Each use case **SHALL** be assigned a risk tier before controls are selected. | T1 | Evidenced |
 | ACA-07-04 | The inventory **SHALL** be reconciled on a defined cadence and on material change. | T2 | Evidenced |
+| ACA-07-05 | The approved model for each AI role that can act **SHALL** be recorded, and a different model **SHALL NOT** act in that role until reassessed and re-approved. | T4 | Enforced |
 
 ### 08, AI Identity & Access Control
 
@@ -107,6 +108,8 @@ Representative requirements per pillar. This set is normative and versioned; it 
 | ACA-11-01 | Output that influences a consequential decision **SHALL** be identified as such. | T3 | Evidenced |
 | ACA-11-02 | High-impact decisions **SHALL** require human validation before effect. | T3 | Enforced |
 | ACA-11-03 | AI-influenced decisions **SHALL** be recorded with the output and rationale. | T3 | Evidenced |
+| ACA-11-04 | Claims made on the organization's behalf in AI-generated content **SHALL** trace to an approved fact source; unsupported claims **SHALL** be held for a person or revised. | T3 | Enforced |
+| ACA-11-05 | AI-generated content published to people outside the organization **SHALL** carry an AI disclosure applied by the control point, which the AI cannot remove. | T3 | Enforced |
 
 ### 12, Tool & Action Control
 
@@ -116,6 +119,8 @@ Representative requirements per pillar. This set is normative and versioned; it 
 | ACA-12-02 | High-impact actions **SHALL** require approval or step-up before execution. | T4 | Enforced |
 | ACA-12-03 | No action class **SHALL** be enforced live without a defined containment or compensation path. | T4 | Enforced |
 | ACA-12-04 | Every action **SHALL** be logged with the requesting identity, inputs, and outcome. | T4 | Verified |
+| ACA-12-05 | The enforcement policy for an action-capable AI **SHALL** be versioned, machine-readable, and approved by both the business owner and security before it is enforced; an unapproved or expired policy **SHALL** limit the AI to non-consequential actions. | T4 | Enforced |
+| ACA-12-06 | A refused or held action **SHALL** return its reason and the responses open to the AI, within a bounded retry budget; unchanged resubmission of refused content **SHALL** be stopped. | T4 | Enforced |
 
 ### 13, Human Accountability Model
 
@@ -124,6 +129,7 @@ Representative requirements per pillar. This set is normative and versioned; it 
 | ACA-13-01 | A named human **SHALL** own each consequential outcome, decision, approval, and exception. | T1 | Declared |
 | ACA-13-02 | Risk acceptance for a use case **SHALL** be recorded and attributable. | T3 | Evidenced |
 | ACA-13-03 | Recovery ownership **SHALL** be assigned before go-live for action-capable use cases. | T4 | Declared |
+| ACA-13-04 | An action held for human decision **SHALL** expire if not decided within a defined window and **SHALL NOT** execute after it. | T4 | Enforced |
 
 ### 14, AI Assurance & Testing
 
@@ -132,6 +138,7 @@ Representative requirements per pillar. This set is normative and versioned; it 
 | ACA-14-01 | Controls **SHALL** be tested before go-live, proportionate to tier. | T3 | Verified |
 | ACA-14-02 | High-impact and autonomous use cases **SHALL** undergo adversarial testing of input, output, and action controls. | T5 | Verified |
 | ACA-14-03 | Test results **SHALL** be retained as evidence and re-run on material change. | T3 | Verified |
+| ACA-14-04 | A model-based check used as a control **SHALL** be pinned to a version, evaluated against known-bad cases before adoption, fail closed, and **SHALL NOT** override a deterministic block. | T4 | Verified |
 
 ### 15, Monitoring, Logging & Evidence
 
@@ -140,6 +147,7 @@ Representative requirements per pillar. This set is normative and versioned; it 
 | ACA-15-01 | Activity **SHALL** be logged sufficiently to reconstruct what AI saw, produced, decided, and did. | T2 | Verified |
 | ACA-15-02 | Logs **SHALL** be tamper-evident and retained per policy. | T3 | Verified |
 | ACA-15-03 | Anomalous or policy-violating behavior **SHALL** be detectable and alertable. | T4 | Verified |
+| ACA-15-04 | Actions recorded by the target system **SHALL** be reconciled against the control point's record on a defined cadence; an action with no matching record **SHALL** trigger containment. | T4 | Enforced |
 
 ### 16, Incident Containment & Recovery
 
@@ -148,6 +156,7 @@ Representative requirements per pillar. This set is normative and versioned; it 
 | ACA-16-01 | Each tiered use case **SHALL** have a tested means to disable the AI capability quickly. | T4 | Enforced |
 | ACA-16-02 | High-impact actions **SHALL** have a containment or compensation/rollback path. | T4 | Enforced |
 | ACA-16-03 | Recovery from an AI incident **SHALL** be owned, documented, and exercised. | T4 | Evidenced |
+| ACA-16-04 | Restoring an AI capability after it was disabled **SHALL** require named, strongly authenticated approval, and two people after a full stop. | T4 | Enforced |
 
 ---
 
@@ -174,4 +183,4 @@ Assessment tooling, agents, and GRC systems can consume that single source rathe
 
 **Next:** [07 · AI Inventory & Classification](07-pillar-ai-inventory-and-classification.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

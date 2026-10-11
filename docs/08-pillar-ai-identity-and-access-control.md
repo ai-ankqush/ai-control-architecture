@@ -89,4 +89,4 @@ Maps to NIST AI RMF **Manage**, ISO/IEC 42001 access and operational controls, E
 
 **Next:** [09 · Data Boundary Control](09-pillar-data-boundary-control.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

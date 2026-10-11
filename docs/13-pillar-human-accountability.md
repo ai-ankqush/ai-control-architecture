@@ -34,6 +34,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | ACA-13-01 | A named human owns each consequential outcome, decision, approval, and exception. | T1 | Declared |
 | ACA-13-02 | Risk acceptance for a use case is recorded and attributable. | T3 | Evidenced |
 | ACA-13-03 | Recovery ownership is assigned before go-live for action-capable use cases. | T4 | Declared |
+| ACA-13-04 | An action held for human decision expires if not decided within a defined window and does not execute after it. | T4 | Enforced |
 
 ---
 
@@ -45,6 +46,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 - **Exception ownership**: deviations from required controls are owned, time-bound, and reviewed, not permanent silent gaps.
 - **Recovery ownership**: before an action-capable use case goes live, someone owns "if this fails, I make it right" ([pillar 16](16-pillar-containment-and-recovery.md)).
 - **Judgement, not delegation**: the architecture's stance ([Core Thesis](03-core-thesis.md)): you can use AI to inform a judgement, but you cannot outsource the judgement itself.
+- **Held actions expire** (ACA-13-04): an action waiting for a human decision expires after a defined window and is rejected, not run late on context that has changed. Expiry is recorded and the owner is told.
 
 ---
 
@@ -56,6 +58,7 @@ From the [Requirements Catalogue](06-requirements-catalogue.md):
 | Decision accountability recorded | - | - | Required | Required | Required |
 | Risk acceptance recorded | - | Recommended | Required | Required | Required |
 | Recovery owner assigned | - | - | - | Required (before go-live) | Required (before go-live) |
+| Held actions expire | - | - | - | Required | Required |
 
 ---
 
@@ -82,4 +85,4 @@ Maps to NIST AI RMF **Govern**, ISO/IEC 42001 (roles, responsibilities, and huma
 
 **Next:** [14 · AI Assurance & Testing](14-pillar-assurance-and-testing.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*

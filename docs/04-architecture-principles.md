@@ -66,4 +66,4 @@ The pillars (07–16) implement these principles for a specific control surface.
 
 **Next:** [05 · Reference Architecture](05-reference-architecture.md)
 
-*Version 0.1.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
+*Version 0.3.0 · Licensed under the terms in [LICENSE.md](../LICENSE.md).*
