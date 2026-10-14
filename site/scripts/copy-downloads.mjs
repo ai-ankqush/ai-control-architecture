@@ -48,6 +48,11 @@ try {
 // Unlisted course sample lesson: served at /course-sample (no nav link, noindex).
 const cs = await copyDir(path.join(__dirname, "..", "private", "course-sample"), "course-sample");
 
+// AI Crisis Preparedness Handbook landing page (indexable) + PDF + images at /ai-crisis-handbook/*
+// (LinkedIn Lead Gen Form drives traffic here; no site form).
+const hb = await copyDir(path.join(__dirname, "..", "private", "ai-crisis-handbook"), "ai-crisis-handbook");
+console.log(`postbuild: copied ${hb} file(s) -> /ai-crisis-handbook`);
+
 // Orla, the site guide: widget + owl served at /orla/* (chat backend is api/orla.js).
 const orla = await copyDir(path.join(__dirname, "..", "private", "orla"), "orla");
 

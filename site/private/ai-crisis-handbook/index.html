@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The AI Crisis Preparedness Handbook (free) · AI Control Architecture</title>
+<meta name="description" content="A free, vendor-agnostic handbook for boards, CISOs, legal and business leaders: what to decide in the first hour, first day and first week of an AI crisis. Seven scenarios, containment options, regulatory clocks and a readiness check. By Ankush Chowdhary.">
+<meta name="author" content="Ankush Chowdhary">
+<link rel="canonical" href="https://aicontrolarchitecture.org/ai-crisis-handbook">
+<meta property="og:type" content="book">
+<meta property="og:title" content="The AI Crisis Preparedness Handbook">
+<meta property="og:description" content="What leaders do in the first hour, the first day and the first week of an AI crisis. Free, vendor-agnostic, built on the AI Control Architecture.">
+<meta property="og:url" content="https://aicontrolarchitecture.org/ai-crisis-handbook">
+<meta property="og:image" content="https://aicontrolarchitecture.org/ai-crisis-handbook/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@aicontrolarch">
+<meta name="twitter:title" content="The AI Crisis Preparedness Handbook">
+<meta name="twitter:description" content="What leaders do in the first hour, day and week of an AI crisis. Free and vendor-agnostic.">
+<meta name="twitter:image" content="https://aicontrolarchitecture.org/ai-crisis-handbook/og.jpg">
+<link rel="icon" href="/static/favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The AI Crisis Preparedness Handbook",
+  "alternateName": "What leaders do in the first hour, the first day and the first week",
+  "bookEdition": "Free edition, version 1.2",
+  "datePublished": "2026-10",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "bookFormat": "https://schema.org/EBook",
+  "numberOfPages": 19,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://aicontrolarchitecture.org/ai-crisis-handbook",
+  "image": "https://aicontrolarchitecture.org/ai-crisis-handbook/og.jpg",
+  "author": {"@type": "Person", "name": "Ankush Chowdhary", "description": "Creator of the AI Control Architecture", "url": "https://aicontrolarchitecture.org/architecture/about-the-author"},
+  "publisher": {"@type": "Organization", "name": "AI Control Architecture", "url": "https://aicontrolarchitecture.org"},
+  "about": ["AI incident response", "AI crisis management", "AI governance", "AI security", "Agentic AI", "EU AI Act Article 73", "Tabletop exercise"],
+  "audience": {"@type": "Audience", "audienceType": "Boards, CEOs, CISOs, CIOs, general counsel, risk, compliance and communications leaders"}
+}
+</script>
+<style>
+:root{--navy:#0F1B2D;--navy2:#182A44;--teal:#2BB3A3;--teal2:#1E8C7F;--amber:#E8A33D;--ink:#EAF1F8;--muted:#9FB3C8;--line:#24364F;--card:#13233A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--navy);color:var(--ink);font:400 16px/1.6 Lato,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+a{color:var(--teal)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700;letter-spacing:.02em;font-size:14px}
+.mark{width:28px;height:28px;border:1.5px solid var(--teal);border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff}
+.top nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:18px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:56px 0 40px}
+.eyebrow{color:var(--teal);font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+h1{font-size:46px;line-height:1.08;margin:10px 0 14px;font-weight:900}
+.lede{font-size:19px;color:#C9D5E3;margin:0 0 22px}
+.by{font-size:14px;color:var(--muted);margin-bottom:26px}.by b{color:#fff}
+.btn{display:inline-block;background:var(--teal);color:#06231f;font-weight:800;padding:13px 22px;border-radius:10px;text-decoration:none;border:0;font-size:16px;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.cover{width:100%;max-width:380px;border-radius:10px;box-shadow:0 30px 70px rgba(0,0,0,.45);justify-self:center}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 14px;font-weight:900}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{margin:0 0 6px;font-size:16px}.card p{margin:0;color:var(--muted);font-size:14.5px}
+.scen{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 28px;margin:0;padding:0;list-style:none}
+.scen li{padding:10px 0;border-bottom:1px solid var(--line)}.scen b{color:var(--teal);margin-right:8px}
+.formbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;max-width:640px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+input,select{width:100%;padding:11px 12px;border-radius:8px;border:1px solid var(--line);background:#0B1626;color:var(--ink);font:inherit;font-size:15px}
+input:focus,select:focus{outline:2px solid var(--teal);border-color:transparent}
+.check{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:14px;color:#C9D5E3}
+.check input{width:18px;height:18px;margin-top:3px;flex:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.small{font-size:13px;color:var(--muted)}
+.err{color:#ff8f86;font-size:14px;margin-top:10px;min-height:20px}
+.done{display:none}
+.done.on{display:block}
+.offer{margin-top:22px;border-left:3px solid var(--amber);background:#1B2A3E;padding:16px 18px;border-radius:8px}
+.legal{font-size:13.5px;color:var(--muted)}
+.legal h3{color:var(--ink);font-size:15px;margin:18px 0 6px}
+footer{padding:30px 0 50px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.grid,.scen,.row{grid-template-columns:1fr}h1{font-size:36px}.cover{max-width:280px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/"><span class="mark">ACA</span>AI Control Architecture</a>
+    <nav><a href="/start-here">Start here</a><a href="/explore/resources">Resources</a></nav>
+  </div>
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Free handbook · Version 1.2</div>
+      <h1>The AI Crisis Preparedness Handbook</h1>
+      <p class="lede">What leaders do in the first hour, the first day and the first week when an AI system goes wrong.</p>
+      <div class="by">By <b>Ankush Chowdhary</b>, creator of the AI Control Architecture · 19 pages · vendor-agnostic</div>
+      <a class="btn" href="#get">Download the free handbook</a> <a class="btn" style="background:transparent;color:var(--teal);border:1px solid var(--teal);margin-left:8px" href="#review">Get a plan built for you</a>
+    </div>
+    <img class="cover" src="/ai-crisis-handbook/cover.jpg" alt="Cover of The AI Crisis Preparedness Handbook by Ankush Chowdhary" width="380">
+  </div>
+
+  <section>
+    <h2>Not another AI risk explainer</h2>
+    <p>Most incident plans assume software does what it was written to do, data is just data, and a person is behind every action. AI breaks all three. This handbook tells boards, CISOs, legal, risk, communications and business leaders <b>what to decide, in what order, and who decides it</b> when an AI system takes a harmful action, leaks data, says something it shouldn't, is impersonated, changes silently or goes down.</p>
+    <div class="grid" style="margin-top:20px">
+      <div class="card"><h3>First hour, day and week</h3><p>Checklists you can run at 2am, starting with the six facts to establish: what the AI could see, decide and do, under whose authority, whether that authority is contained, and whether its actions can be rebuilt and reversed.</p></div>
+      <div class="card"><h3>Contain, don't just kill</h3><p>Eight containment options, from pausing actions to switching to manual, so you stop the harm without stopping the business.</p></div>
+      <div class="card"><h3>Roles and decision rights</h3><p>Who can contain, who can undo, who talks to regulators and who approves a restart. Fill it in before you need it.</p></div>
+      <div class="card"><h3>Regulatory clocks</h3><p>EU AI Act Article 73, EU and UK GDPR, NIS2, DORA and SEC Item 1.05, with what starts each clock and links to the sources.</p></div>
+      <div class="card"><h3>Restart and board briefing</h3><p>Restart criteria, including restarting with less authority and earning the rest back, and the five questions every board asks.</p></div>
+      <div class="card"><h3>13-question readiness check</h3><p>An honest score of where you stand today, and where to start.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Seven scenarios, with real cases</h2>
+    <ul class="scen">
+      <li><b>A</b>An AI agent takes a harmful action</li>
+      <li><b>B</b>Data leaks through an AI system</li>
+      <li><b>C</b>Your AI tells people something false or binding</li>
+      <li><b>D</b>Deepfake impersonation of your leaders</li>
+      <li><b>E</b>A vendor's AI misbehaves</li>
+      <li><b>F</b>The model changed and nobody noticed</li>
+      <li><b>G</b>Your model or AI provider becomes unavailable</li>
+    </ul>
+    <p class="small" style="margin-top:14px">Each scenario names the AI Control Architecture pillars that would have prevented it or limited the damage.</p>
+  </section>
+
+  <section id="get">
+    <h2>Download the handbook</h2>
+    <p>Free, no sign-up needed on this page. Provided as is under the <a href="#terms">Terms of use</a>.</p>
+    <a class="btn" href="/ai-crisis-handbook/AI-Crisis-Preparedness-Handbook.pdf" download>Download the PDF (19 pages)</a>
+    <p class="small" style="margin-top:12px">Start with three things: fill in the roles table (Section 4), take the readiness check (Section 12), and print the first-hour checklist (Section 6).</p>
+  </section>
+
+  <section id="review">
+    <div class="eyebrow">Next step</div>
+    <h2>Build your organisation's plan</h2>
+    <p>The handbook gives you the generic version. The <b>AI Crisis Readiness Review</b>, offered by Keystone Executive (Ankush Chowdhary's consulting practice), builds yours: an independent, vendor-agnostic assessment of up to three of your critical AI systems in 10 business days.</p>
+    <div class="grid" style="margin:18px 0">
+      <div class="card"><h3>Roles and decision rights</h3><p>Who contains, who undoes, who notifies and who approves a restart, with names.</p></div>
+      <div class="card"><h3>Containment options</h3><p>What each of your systems supports today, and what it should.</p></div>
+      <div class="card"><h3>Your procedures</h3><p>First-hour, first-day and restart procedures written for your systems.</p></div>
+      <div class="card"><h3>Notification triggers</h3><p>The regimes that may apply and what starts each clock, as input for your counsel.</p></div>
+      <div class="card"><h3>Five most dangerous gaps</h3><p>And a prioritised 30-day plan with owners and effort.</p></div>
+      <div class="card"><h3>Executive readout</h3><p>60 minutes with your leadership team: findings, decisions, next steps.</p></div>
+    </div>
+    <p><b>10 business days · up to 3 critical AI systems · fixed fee US$9,500.</b> Once the plan exists, a tabletop exercise tests whether the organisation can execute it.</p>
+    <a class="btn" href="/ai-crisis-handbook/AI-Crisis-Readiness-Review.pdf" target="_blank" rel="noopener">View the Review one-pager</a>
+    <a class="btn" style="background:transparent;color:var(--teal);border:1px solid var(--teal);margin-left:8px" href="mailto:hello@keystoneexecutive.ai?subject=AI%20Crisis%20Readiness%20Review">Talk to Keystone Executive</a>
+  </section>
+
+  <section class="legal">
+    <h2 style="font-size:20px">About the author</h2>
+    <p>Ankush Chowdhary has spent 30 years in cybersecurity and created the AI Control Architecture, an open, vendor-agnostic framework of ten control pillars for governing, securing and containing enterprise AI, and the Recursive Cyber Defense Model. He leads <a href="https://www.keystoneexecutive.ai">Keystone Executive</a>. <a href="/architecture/about-the-author">More about the author</a>.</p>
+
+    <h3 id="terms">Terms of use</h3>
+    <p>The handbook is provided free of charge, as is, without warranty of any kind, express or implied, including fitness for a particular purpose, accuracy or completeness. By downloading or using it, you accept that the publisher and authors are not liable for any loss or damage arising from its use or from decisions made in reliance on it. It is general information, not legal, regulatory or professional advice; you are responsible for your own due diligence and for confirming your obligations with qualified advisers. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  </section>
+
+  <footer>© 2026 AI Control Architecture · <a href="/">aicontrolarchitecture.org</a> · <a href="https://x.com/aicontrolarch">@aicontrolarch</a></footer>
+</div>
+
+</body>
+</html>

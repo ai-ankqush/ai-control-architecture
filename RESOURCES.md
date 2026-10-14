@@ -2,6 +2,12 @@
 
 Everything below is free to use and share under **CC BY 4.0**. Each item opens in your browser to read, or downloads as a PDF.
 
+## New: The AI Crisis Preparedness Handbook
+
+What leaders do in the first hour, the first day and the first week when an AI system goes wrong. Seven scenarios, containment options, decision rights, regulatory clocks and a 13-question readiness check. Free, 19 pages, by Ankush Chowdhary.
+
+<a href="/ai-crisis-handbook" style="display:inline-block;padding:9px 16px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;background:#2b6bff;color:#fff;">Get the handbook</a>
+
 ## The executive pack
 
 A short set of forwardable documents for leadership, security, risk, and audit.
