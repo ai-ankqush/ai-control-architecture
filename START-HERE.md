@@ -31,7 +31,7 @@ A 13-slide, board-to-CISO walkthrough of the whole model. View it here or downlo
 - **New to the idea?** → [Why This Exists](/architecture/why-this-exists)
 - **Want the argument in full?** → [The Core Thesis](/architecture/foundation/03-core-thesis)
 - **Ready to try it now?** → [Quickstart](/architecture/quickstart) — one AI use case, end to end
-- **Want everything to download?** → [Resources](/explore/resources) — the executive pack and the practitioner course
+- **Want everything to download?** → [Resources](/explore/resources) — the executive pack
 
 ## Everything here is open
 

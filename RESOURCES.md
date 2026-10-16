@@ -53,7 +53,7 @@ A short set of forwardable documents for leadership, security, risk, and audit.
 
 ## Training
 
-The full **Practitioner Course** — 12 modules, ~2.5 hours — is on the [Training](/explore/training) page, free to view and download, with an on-demand video course coming to Coursera.
+**Securing Enterprise AI: A Vendor-Agnostic Method**, the full 7-hour video course built on the architecture, is now live on Udemy. Details and the launch offer are on the [Training](/explore/training) page.
 
 ## The specification &amp; tools
 
